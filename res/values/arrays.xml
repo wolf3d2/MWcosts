@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <string-array name="rec_tb_create_btn">
+        <item>@string/toolbar_direct_btn0</item>
+        <item>@string/toolbar_direct_btn1</item>
+        </string-array>
+
+    <string-array name="skin">
+        <item>@string/skin_light</item>
+        <item>@string/skin_black</item>
+        <item>@string/skin_gray</item>
+        <item>@string/skin_orange</item>
+        <item>@string/skin_white_blue</item>
+        <item>@string/skin_white_green</item>
+        <item>@string/skin_dark_green</item>
+        </string-array>
+
+    <string-array name="copy_menu">
+        <item>@string/copy_menu0</item>
+        <item>@string/copy_menu1</item>
+        <item>@string/copy_menu2</item>
+        <item>@string/copy_menu3</item>
+        <item>@string/copy_menu4</item>
+        </string-array>
+    
+    <string-array name="sel_menu">
+        <item>@string/sel_menu0</item>
+        <item>@string/sel_menu1</item>
+        <item>@string/sel_menu2</item>
+        <item>@string/sel_menu3</item>
+        <item>@string/sel_menu4</item>
+        <item>@string/sel_menu5</item>
+        </string-array>
+    
+    <string-array name="integer_vals" tools:ignore="MissingTranslation">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+     </string-array>
+    
+    <string-array name="rec_tb">
+        <item>@string/tb_action_0</item>
+        <item>@string/tb_action_1</item>
+        <item>@string/tb_action_2</item>
+        <item>@string/tb_action_3</item>
+        <item>@string/tb_action_4</item>
+        <item>@string/tb_action_5</item>
+        <item>@string/tb_action_6</item>
+        <item>@string/tb_action_7</item>
+        <item>@string/tb_action_8</item>
+        <item>@string/tb_action_9</item>
+        <item>@string/tb_action_10</item>
+        <item>@string/tb_action_11</item>
+        <item>@string/tb_action_12</item>
+        <item>@string/tb_action_13</item>
+        <item>@string/tb_action_14</item>
+        <item>@string/tb_action_15</item>
+        <item>@string/tb_action_16</item>
+        <item>@string/tb_action_17</item>
+        <item>@string/tb_action_18</item>
+        <item>@string/tb_action_19</item>
+        <item>@string/tb_action_20</item>
+        <item>@string/tb_action_21</item>
+        <item>@string/tb_action_22</item>
+        <item>@string/tb_action_23</item>
+        <item>@string/tb_action_24</item>
+        </string-array>
+        
+</resources>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" xmlns:android="http://schemas.android.com/apk/res/android">
+
+<RelativeLayout
+    android:id="@+id/newrec_toppanel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:background="#0ff"
+    android:orientation="horizontal" 
+    >
+
+<TextView
+    android:id="@+id/newrec_suminbase"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:paddingLeft="3dp"
+    android:layout_toRightOf="@+id/newrec_readonly"
+    android:text="@+string/sum"
+    android:onClick="onClick"
+    android:textSize="12dp"
+    android:visibility="visible" 
+    />
+
+<TextView
+    android:id="@+id/newrec_changed"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:paddingRight="3dp"
+    android:text="*"
+    android:textColor="#000"
+    android:textSize="12dp"
+    />
+
+<TextView
+    android:id="@+id/newrec_readonly"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toLeftOf="@+id/newrec_changed"
+    android:background="#f00"
+    android:text=" RO "
+    android:textColor="#000"
+    android:textSize="12dp"
+    android:visibility="gone" 
+    />
+
+</RelativeLayout>
+    
+<ScrollView
+    android:id="@+id/newrec_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/newrec_llsearch_panel"
+    android:layout_below="@+id/newrec_toppanel"
+    android:scrollbars="vertical" >
+
+<RelativeLayout
+    android:id="@+id/newrec_llet"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+<EditText
+    android:id="@+id/newrec_edit"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:ems="10"
+    android:gravity="left|top"
+    android:inputType="textMultiLine"
+    android:linksClickable="true"
+    android:minLines="25"
+    android:paddingBottom="1dp"
+    android:paddingLeft="3dp"
+    android:paddingRight="2dp"
+    android:textCursorDrawable="@null"
+    android:textSize="16dp" >
+ 
+        <requestFocus />
+    </EditText>
+        
+</RelativeLayout>
+</ScrollView>
+
+<!-- <RelativeLayout -->
+<!--     android:id="@+id/newrec_rlvert_toolbar" -->
+<!--     android:layout_width="wrap_content" -->
+<!--     android:layout_height="wrap_content" -->
+<!--     android:layout_above="@+id/newrec_llsearch_panel" -->
+<!--     android:layout_alignParentRight="true" -->
+<!--     android:layout_marginBottom="20dp" -->
+<!--     android:layout_marginRight="15dp" -->
+<!--     android:background="#00f" > -->
+    
+<!-- </RelativeLayout> -->
+
+<ImageView
+    android:id="@+id/newrec_tb2_image_edit"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_above="@+id/newrec_llsearch_panel"
+    android:layout_alignParentRight="true"
+    android:layout_marginBottom="20dp"
+    android:layout_marginRight="15dp"
+    android:background="@drawable/round_button_blue"
+    android:clickable="true"
+    android:onClick="onClick"
+    android:padding="10dp"
+    android:src="@drawable/keyboard" 
+    />
+
+<RelativeLayout
+    android:id="@+id/newrec_llsearch_panel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_above="@+id/newrec_hscroll"
+    android:background="#000"
+    android:paddingBottom="5dp"
+    android:paddingLeft="2dp"
+    android:paddingRight="5dp" >
+
+<TextView
+    android:id="@+id/newrec_search_result"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:layout_marginTop="2dp"
+    android:text="[0/0]"
+    android:textColor="#fff"
+    android:textSize="8sp" 
+    />
+
+<EditText
+    android:id="@+id/newrec_search_edit"
+    android:layout_width="wrap_content"
+    android:layout_height="35dp"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/newrec_search_result"
+    android:layout_marginLeft="2dp"
+    android:layout_toLeftOf="@+id/newrec_search_up"
+    android:background="@drawable/edittext_back_focus_style"
+    android:clickable="true"
+    android:ems="10"
+    android:gravity="left"
+    android:inputType="textMultiLine"
+    android:linksClickable="true"
+    android:maxLines="1"
+    android:minLines="1"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:textSize="20dp" 
+    >
+</EditText>
+    
+<Button
+    android:id="@+id/newrec_search_up"
+    android:layout_width="35dp"
+    android:layout_height="35dp"
+    android:layout_below="@+id/newrec_search_result"
+    android:layout_toLeftOf="@+id/newrec_search_down"
+    android:layout_marginLeft="2dp"
+    android:background="#aaa"
+    android:clickable="true"
+    android:onClick="onClick"
+    android:text="⇧"
+    android:textColor="#000"
+    android:textSize="16dp" 
+    />
+
+<Button
+    android:id="@+id/newrec_search_down"
+    android:layout_width="35dp"
+    android:layout_height="35dp"
+    android:layout_below="@+id/newrec_search_result"
+    android:layout_marginLeft="5dp"
+    android:layout_toLeftOf="@+id/newrec_search_close"
+    android:background="#aaa"
+    android:clickable="true"
+    android:onClick="onClick"
+    android:text="⇩"
+    android:textColor="#000"
+    android:textSize="16dp" />
+
+<Button
+    android:id="@+id/newrec_search_close"
+    android:layout_width="35dp"
+    android:layout_height="35dp"
+    android:layout_alignParentRight="true"
+    android:layout_below="@+id/newrec_search_result"
+    android:layout_marginLeft="20dp"
+    android:background="@drawable/delete"
+    android:clickable="true"
+    android:onClick="onClick" 
+    />
+
+</RelativeLayout>
+
+<HorizontalScrollView
+    android:id="@+id/newrec_hscroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#808000" 
+    >
+
+<TableLayout
+            android:id="@+id/newrec_bottompanel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" 
+            >
+</TableLayout>
+
+</HorizontalScrollView>
+</RelativeLayout>

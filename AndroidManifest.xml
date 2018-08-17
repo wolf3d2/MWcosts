@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.mwcorp.costs"
+    android:versionCode="40"
+    android:versionName="1.04" >
+
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+<uses-sdk 
+    android:minSdkVersion="14" 
+    android:targetSdkVersion="26"
+    />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+		android:name="App"
+        >
+       <!--This meta-data tag is required to use Google Play Services.-->
+        <meta-data 
+            android:name="com.google.android.gms.version" 
+            android:value="@integer/google_play_services_version"
+            />
+<!-- ============================================================================== -->
+        <activity
+            android:name="com.mwcorp.costs.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="file" />
+                <data android:scheme="content" />
+                <data android:mimeType="text/*"/>
+            </intent-filter>
+            </activity>
+<!-- ============================================================================== -->
+		<activity android:name="About" 
+					android:label="@string/mm_about"
+					android:configChanges="orientation"
+					/>
+<!-- ============================================================================== -->
+		<activity android:name="Newrecord" 
+					android:label="@string/new_record"
+					android:configChanges="orientation" 
+					android:windowSoftInputMode="stateHidden"
+					/>
+<!-- ============================================================================== -->
+		<activity android:name="Cur" 
+					android:label="@string/cur"
+					android:configChanges="orientation"
+					/>
+<!-- ============================================================================== -->
+		<activity android:name="CurEdit" 
+					android:label="@string/cur"
+					android:windowSoftInputMode="adjustPan|stateVisible"
+					android:configChanges="orientation"
+					/>
+<!-- ============================================================================== -->
+				<activity android:name="PrefActMain" 
+					android:label="@string/settings"
+					android:configChanges="orientation"
+					/>
+<!-- ============================================================================== -->
+				<activity android:name="PrefActSetToolbar" 
+					android:label="@string/scr_toolbar"
+					android:configChanges="orientation"
+					android:windowSoftInputMode="stateHidden"
+					/>
+<!-- ============================================================================== -->
+	<!-- google admob -->
+        <activity 
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+            android:theme="@android:style/Theme.Translucent" 
+            />
+
+        </application>
+
+</manifest>

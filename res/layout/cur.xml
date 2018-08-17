@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cur_global"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+<LinearLayout
+    android:id="@+id/llad_c"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical" >
+    
+</LinearLayout>
+
+<LinearLayout
+    android:id="@+id/cur_toppanel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:background="#fff"
+    android:gravity="right"
+    android:orientation="horizontal" >
+
+<Button
+    android:id="@+id/cur_del"
+	style="@style/img_button"
+    android:layout_alignParentRight="true"
+    android:drawableTop="@drawable/delete"
+    android:onClick="onClick_cur_del"
+    android:text="@+string/del"
+    android:visibility="gone" />
+
+<Button
+    android:id="@+id/cur_add"
+	style="@style/img_button"
+    android:layout_alignParentRight="true"
+    android:drawableTop="@drawable/add"
+    android:onClick="onClick_cur_add"
+    android:text="@string/add" 
+    />
+
+</LinearLayout>
+
+<ListView
+    android:id="@+id/cur_listView1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/llad_c"
+    android:layout_below="@+id/cur_toppanel"
+    android:layout_alignParentRight="true"
+    android:layout_alignParentLeft="true"
+    android:paddingLeft="2dp" 
+    >
+
+</ListView>
+
+</RelativeLayout>

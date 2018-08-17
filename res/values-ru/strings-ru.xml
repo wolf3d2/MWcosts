@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MWcosts. Расходы, заметки</string>
+    <string name="version">Версия</string>
+    <string name="settings">Настройки</string>
+
+<!-- Title for permission-->
+    <string name="perm_expl1">Для полноценной работы программы, требуются некоторые разрешения, БЕЗ КАКОГО ЛИБО ИЗ НИХ, ПРОГРАММА РАБОТАТЬ НЕ БУДЕТ:\n\n- доступ на чтение и запись к внутреннему хранилищу - для хранения записей пользователя.\n\n- тип окна Поверх всех окон - для некоторых диалогов.</string>
+    <string name="perm_expl2">Для работы диалоговых окон, программе требуется разрешение на тип окна Поверх всех окон</string>
+    <string name="perm_expl3">В случае, если вы по каким-то причинам запретили разрешение и запрос на них больше не показывается, то разрешения можно предоставить из системных настроек-приложения-jbak2 keyboard. Пункты Разрешения и Наложение поверх всех окон</string>
+    <string name="perm_not_all_perm">Не даны все необходимые разрешения</string>
+    
+    <string name="restart_app">Требуется перезапуск приложения</string>
+    <string name="color_help">Каждый цвет, а также прозрачность, задаётся двузначным шестнадцатиричным числом из диапазона 00-ff.\nЦвет задаётся в формате 0xaarrggbb или #aarrggbb, где\naa -прозрачность (альфа канал)\nrr - красный\ngg - зелёный\nbb - синий\n\nНапример:\n0xff000000 - чёрный непрозрачный,\n0x00ff0000 - красный прозрачный,\n0x77ffff00 - жёлтый полупрозрачный,\n0xffffffff - белый непрозрачный и т.д.</string>
+    <string name="error_msg">Последний запуск MWcosts завершился с ошибкой.\n\nОтправить отчёт разработчику?</string>
+    <string name="exitapp">Выход</string>
+    <string name="toast_not_open_file">Не могу открыть этот файл.</string>
+    <string name="toast_error_saved">Не могу сохранить этот файл.</string>
+    <string name="toast_msg1">Пока не работает</string>
+    <string name="toast_msg2">Не заполнены все поля.</string>
+    <string name="toast_msg3">Данные изменены.\nСохранить?</string>
+    <string name="toast_msg4">Сохранено</string>
+    <string name="toast_msg5">Не могу создать папку программы на карте памяти.\nЗавершаю работу.</string>
+    <string name="toast_msg6">Скопировано.</string>
+    <string name="toast_msg7">Для отображения панели инструментов, должно быть выбрано кнопок не менее: </string>
+    <string name="toast_msg8">Для внешних файлов не работает.\nЗапускайте настройки из главного экрана.</string>
+    
+<!-- главное меню  -->
+    <string name="mm_about">О программе</string>
+
+<!-- новая запись  -->
+    <string name="new_record">Запись</string>
+    <string name="view_mode">Режим просмотра</string>
+    <string name="view_mode_desc">Запрещает любые изменения в открытом внешнем файле. Не действует для текстов записей программы</string>
+    <string name="edit_file">Редактирование файла</string>
+    <string name="newrec_calculate_time">Посчитано</string>
+    <string name="newrec_full">На полный экран</string>
+    <string name="newrec_openfile_title">Открываемый файл слишком большой </string>
+    <string name="newrec_openfile_title2">и его открытие может занять продолжительное время или привести к зависанию программы или всего устройства.\nЧто делаем?</string>
+    <string name="newrec_openfile_str0">Прочитать первые 50kb</string>
+    <string name="newrec_openfile_str1">Прочитать первые 100kb</string>
+    <string name="newrec_openfile_str2">Вс равно открыть</string>
+    
+<!-- меню новой записи  -->
+    <string name="menunrec_recalculate">Пересчитать</string>
+    <string name="menunrec_auto_calculate">Автоподсчёт:</string>
+    <string name="menunrec_save">Сохранить</string>
+    <string name="menunrec_help">Помощь</string>
+    <string name="menunrec_help_desc">Правила оформления новой записи:\n\nПодсчёт ведётся по абзацам.\nПеред цифрами в абзаце обязательно должен стоять хотя бы один символ, иначе считать будет неверно!\nЕсли абзац оканчивается числом, то считается что это базовая валюта.\nЕсли абзац оканчивается числом с указанием валюты (например 50USD), то к сумме базовой прибавляется указанная валюта в пересчёте по установленному курсу.\n\nЕсли первым символом в записи указать #, то эта запись не подсчитывается.\nЕсли последний символ абзаца #, то этот абзац не подсчитывается.\n\nЗАМЕЧАНИЕ!\nАвтоподсчёт на длинных записях сильно замедляет работу</string>
+    <string name="menunrec_search">Поиск</string>
+    <string name="menunrec_close">Закрыть без сохранения</string>
+    
+<!-- mail  -->
+    <string name="feedback_subject">Отзыв на\u0020</string>
+    <string name="app_info">===\nОтчёт о ошибке MW costs.\nПожалуйста, не удаляйте эту информацию, она позволит быстрее найти ответ\n===\n</string>
+    <string name="app_info_os">ОС</string>
+    <string name="app_info_device">Устройство</string>
+    <string name="act_feedback">Письмо разработчику</string>
+    
+<!-- about activity -->
+    <string name="about_autor"><b>Автор:</b>\nМихаил Вязенкин (MWcorp)\nНик на 4pda.ru - wolf3d2\n</string>
+    <string name="about_desc">Программа пишется для себя и поставляется \"как есть\".\n\nИсходя из этого - дельные (на МОЙ взгляд!) предложения постепенно будут реализовываться, а остальные игнорироваться.\n\nРабота программы тестировалась с клавиатурой jbak2 keyboard (в других программах), у неё огромные возможности редактирования, в том числе кнопки в начало/конец текста, в начало/конец строки/абзаца, стрелки, мультибуфер обмена на 20 последних скопированных текстов (значение настраивается). Наконец встроено три вида калькулятора.\nА кроме того - настроить можно абсолютно всё!</string>
+    <string name="about_other">\n<b>Прочее:</b>\nТема обсуждения: http://4pda.ru/forum/index.php?showtopic=747074 \n\nИконка приложения: myha781 (4pda.ru)</string>
+    <string name="about_other_app">Другие программы</string>
+    <string name="about_diary">История версий</string>
+    
+<!-- предопределённые валюты -->
+    <string name="curdefcs_rub">RUB</string>
+    <string name="curdefn_rub">Российский рубль</string>
+    <string name="curdefcs_usd">USD</string>
+    <string name="curdefn_usd">Доллар США</string>
+    <string name="curdefcs_brb">BRB</string>
+    <string name="curdefn_brb">Белорусский рубль</string>
+    <string name="curdefcs_uah">UAH</string>
+    <string name="curdefn_uah">Украинская гривна</string>
+    <string name="curdefcs_eur">EUR</string>
+    <string name="curdefn_eur">Евро</string>
+    <string name="curdefcs_gbr">GBR</string>
+    <string name="curdefn_gbr">Фунт стерлингов</string>
+    
+<!-- общее -->
+    <string name="error_format">Неверный формат:</string>
+    <string name="no_title">&lt;Нет заголовка&gt;</string>
+    <string name="add">Добавить</string>
+    <string name="add_folder">Новая папка</string>
+    <string name="edit_folder">Редактирование папки</string>
+    <string name="home">Домой</string>
+    <string name="up">Вверх</string>
+    <string name="name">Название:</string>
+    <string name="del">Удалить</string>
+    <string name="del_all">Удалить всё</string>
+    <string name="del_query">Удалить?</string>
+    <string name="save_qery">Сохранить?</string>
+    
+<!-- валюты -->
+    <string name="cur">Валюты</string>
+    <string name="cur_a">Валюта</string>
+    <string name="cur_symb">До трёх символов обозначения валюты:</string>
+    <string name="cur_main_desc">Основная валюта</string>
+    <string name="cur_kurs">Коэффициент курса:</string>
+    
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="cancel">Отмена</string>
+    <string name="ok">Ок</string>
+    <string name="on">Вкл.</string>
+    <string name="off">Выкл.</string>
+    <string name="selection">Выберите действие</string>
+    <string name="home_folder">Домашняя папка</string>
+    
+<!-- новая запись -->
+    <string name="sum">Всего в</string>
+    
+<!--  редактировать имя папки или пометка удалить -->
+    <string name="folder0">Редактировать имя папки</string>
+    <string name="folder1">Режим выделения</string>
+
+<!-- настройки  -->
+    <string name="cat_newrec">Окно редактора</string>
+    <string name="cat_newrec_desc">Параметры редактора</string>
+    <string name="cat_newrec_size_text">Размер текста</string>
+    <string name="cat_newrec_size_text_desc">Размер текста в редакторе\nПо умолчанию - 16</string>
+    
+<!-- настройки для панели инструментов  -->
+    <string name="scr_toolbar">Панель инструментов</string>
+    <string name="scr_toolbar_desc">Настройки панели инструментов</string>
+    <string name="toolbar_show">Включить панель инструментов</string>
+    <string name="toolbar_big">Большие кнопки панели инструментов</string>
+    <string name="toolbar_linecnt_port">Количество строк панели инструментов в портрете</string>
+    <string name="toolbar_linecnt_land">Количество строк панели инструментов в ландшафте</string>
+    <string name="toolbar_direct_btn">Как создавать кнопки</string>
+    <string name="toolbar_direct_btn0">Слева-направо</string>
+    <string name="toolbar_direct_btn1">Сверху-вниз</string>
+    <string name="scr_toolbar_command">Команды:</string>
+    
+    <string name="scr_record">Запись</string>
+    <string name="scr_record_desc">Настройки экрана записи</string>
+    <string name="pref_autocalc">Автоподсчёт</string>
+    <string name="pref_autocalc_desc">Подсчитывать запись автоматически</string>
+
+    <string name="tb_action_0">Ничего не делать</string>
+    <string name="tb_action_1">1.В начало строки</string>
+    <string name="tb_action_2">2.В конец строки</string>
+    <string name="tb_action_3">3.Поиск</string>
+    <string name="tb_action_4">4.Страница вниз</string>
+    <string name="tb_action_5">5.Страница вверх</string>
+    <string name="tb_action_6">6.Закрыть без сохранения</string>
+    <string name="tb_action_7">7.Сохранить и выйти</string>
+    <string name="tb_action_8">8.Настройки</string>
+    <string name="tb_action_9">9.Сохранить</string>
+    <string name="tb_action_10">10.Пересчитать</string>
+    <string name="tb_action_11">11.В начало текста</string>
+    <string name="tb_action_12">12.В конец текста</string>
+    <string name="tb_action_13">13.Стрелка влево</string>
+    <string name="tb_action_14">14.Стрелка вправо</string>
+    <string name="tb_action_15">15.Стрелка вверх</string>
+    <string name="tb_action_16">16.Стрелка вниз</string>
+    <string name="tb_action_17">17.Удалить символ</string>
+    <string name="tb_action_18">18.Функциии выделения</string>
+    <string name="tb_action_19">19.Настройки панели инструментов</string>
+    <string name="tb_action_20">20.Копировать</string>
+    <string name="tb_action_21">21.Вставить</string>
+    <string name="tb_action_22">22.Показать клавиатуру</string>
+    <string name="tb_action_23">23.Скрыть клавиатуру</string>
+    <string name="tb_action_24">24.Выход из приложения</string>
+    
+<!-- команды меню копирования  -->
+    <string name="copy_menu0">Копировать всё</string>
+    <string name="copy_menu1">Копировать абзац</string>
+    <string name="copy_menu2">Копировать строку </string>
+    <string name="copy_menu3">Копировать предложение</string>
+    <string name="copy_menu4">Копировать слово</string>
+
+<!-- команды меню выделения  -->
+    <string name="sel_menu0">Выбрать всё</string>
+    <string name="sel_menu1">Выбрать абзац</string>
+    <string name="sel_menu2">Выбрать строку </string>
+    <string name="sel_menu3">Выбрать предложение</string>
+    <string name="sel_menu4">Выбрать слово</string>
+    <string name="sel_menu5">Удалить выделенное</string>
+    
+<!-- оценка приложения -->
+    <string name="rate_menu">Оценить приложение</string>
+    <string name="rate_title">Оценка приложения</string>
+    <string name="rate_about">Пожалуйста, оцените приложение и это окно больще не будет показываться.</string>
+    
+    <string name="skin_name">Тема приложения</string>
+<!-- должно быть пустым, но быть должно - указыввается скин -->
+    <string name="skin_name_desc"></string>
+    <string name="skin_light">Светлая смешанная</string>
+    <string name="skin_black">Чёрная</string>
+    <string name="skin_gray">Серая</string>
+    <string name="skin_orange">Оранжевая</string>
+    <string name="skin_white_blue">Бело-синяя</string>
+    <string name="skin_white_green">Светло-зелёная</string>
+    <string name="skin_dark_green">Тёмно-зелёная</string>
+    
+</resources>

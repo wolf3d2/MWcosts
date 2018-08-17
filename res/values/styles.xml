@@ -1,0 +1,74 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+<color name="color_orange">#FFA07A</color>
+<color name="color_gray">#888888</color>
+<color name="color_dark_green">#006400</color>
+
+<style name="ThemeOrange" parent="AppBaseTheme">
+    <item name="android:windowBackground">@color/color_orange</item>
+    <item name="android:colorBackground">@color/color_orange</item>
+</style>
+
+<style name="ThemeDarkGreen" parent="@android:style/Theme.Holo">
+    <item name="android:windowBackground">@color/color_dark_green</item>
+    <item name="android:colorBackground">@color/color_dark_green</item>
+</style>
+
+<style name="ThemeGray" parent="AppBaseTheme">
+    <item name="android:windowBackground">@color/color_gray</item>
+    <item name="android:colorBackground">@color/color_gray</item>
+</style>
+
+<!--     <color name="colorPrimaryDark">#F57C00</color> -->
+
+<!--     Black theme. -->
+<!--     <style name="AppThemeBlack" parent="android:Theme.Holo"> -->
+<!--     </style> -->
+    
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="label_desc" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#ffffffff</item>
+        <item name="android:autoLink">all</item>
+        <item name="android:textColorLink">#ffff0000</item>
+    </style>
+    
+    <style name="img_button">
+        <item name="android:padding">5dp</item>
+        <item name="android:paddingTop">1dp</item>
+        <item name="android:paddingBottom">1dp</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:drawablePadding">1dp</item>
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">55dp</item>
+        </style>
+
+    <style name="newrec_toolbar_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:background">#aaa</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:minLines">2</item>
+        <item name="android:maxLines">2</item>
+        </style>
+    
+</resources>

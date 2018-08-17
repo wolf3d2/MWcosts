@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mwcorp.costs.MainActivity" 
+    >
+
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/mm_about"
+        />
+   <item
+        android:id="@+id/action_rate_app"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/rate_menu"
+        />
+   <item
+        android:id="@+id/action_other_app"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/about_other_app"
+        />
+   <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/settings"
+        />
+   <item
+        android:id="@+id/action_exit_app"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/exitapp"
+        />
+</menu>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- Запись -->
+    <PreferenceScreen
+        android:title="@string/cat_newrec" 
+        android:summary="@string/cat_newrec_desc"
+        >
+
+        <EditTextPreference
+	        android:defaultValue="16"
+	        android:key="newrec_size_text"
+	        android:title="@string/cat_newrec_size_text" 
+	        android:summary="@string/cat_newrec_size_text_desc" 
+		    android:inputType="number"
+	        />
+
+        <CheckBoxPreference
+           	android:defaultValue="false"
+	    	android:key="view_mode"
+        	android:title="@string/view_mode" 
+	        android:summary="@string/view_mode_desc" 
+	    />
+
+        <CheckBoxPreference
+           	android:defaultValue="false"
+	    	android:key="newrec_fullscreen"
+        	android:title="@string/newrec_full" 
+	    />
+
+<!-- панель инструментов -->
+     <Preference
+	    android:key="newrec_set_tb"
+        android:title="@string/scr_toolbar" 
+        android:summary="@string/scr_toolbar_desc"
+	    />
+
+    </PreferenceScreen>
+<!--скины приложения -->
+    <ListPreference
+        android:defaultValue="0"
+        android:key="skin_app"
+        android:entryValues="@array/integer_vals"
+        android:entries="@array/skin"
+        android:title="@string/skin_name" 
+        android:summary="@string/skin_name_desc"
+        />
+
+</PreferenceScreen>

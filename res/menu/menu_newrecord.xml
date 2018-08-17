@@ -1,0 +1,55 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.mwcorp.costs.Newrecord" 
+    >
+
+    <item
+        android:id="@+id/menunrec_help"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menunrec_help"
+        />
+    
+    <item
+        android:id="@+id/menunrec_close"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menunrec_close"
+        />
+    
+    <item
+        android:id="@+id/menunrec_search"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menunrec_search"
+        />
+    
+    <item
+        android:id="@+id/menunrec_auto_counted"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menunrec_auto_calculate"
+        />
+    
+    <item
+        android:id="@+id/menunrec_counted"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menunrec_recalculate"
+        />
+    
+    <item
+        android:id="@+id/menunrec_save"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menunrec_save"
+        />
+    
+   <item
+        android:id="@+id/menurec_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/settings"
+        />
+
+</menu>
