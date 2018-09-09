@@ -236,17 +236,17 @@ public class MainActivity extends Activity {
 //			if (rate_app.compareToIgnoreCase("0") == 0)
 //				rateApp();
 		}
-		String scurtime = "dd.MM.yyyy HH:mm:ss";
-		Date dt = new Date();
-		dt.setTime(curtime);
-		SimpleDateFormat sdf = new SimpleDateFormat(scurtime);
-		scurtime = sdf.format(dt);
-		String spartime= "dd.MM.yyyy HH:mm:ss";
-		dt = new Date();
-		dt.setTime(partime);
-		sdf = new SimpleDateFormat(spartime);
-		scurtime = scurtime;
-		spartime = sdf.format(dt);
+//		String scurtime = "dd.MM.yyyy HH:mm:ss";
+//		Date dt = new Date();
+//		dt.setTime(curtime);
+//		SimpleDateFormat sdf = new SimpleDateFormat(scurtime);
+//		scurtime = sdf.format(dt);
+//		String spartime= "dd.MM.yyyy HH:mm:ss";
+//		dt = new Date();
+//		dt.setTime(partime);
+//		sdf = new SimpleDateFormat(spartime);
+//		scurtime = scurtime;
+//		spartime = sdf.format(dt);
 		
 
 		if (curtime > partime + TIME_MONTH) {

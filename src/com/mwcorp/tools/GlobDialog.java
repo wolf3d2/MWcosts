@@ -2,8 +2,10 @@ package com.mwcorp.tools;
 
 import java.util.ArrayList;
 
+import com.mwcorp.costs.R;
 import com.mwcorp.costs.st;
 import com.mwcorp.costs.th;
+import com.mwcorp.perm.Perm;
 
 import android.R.drawable;
 import android.annotation.SuppressLint;
@@ -15,6 +17,7 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
+import android.os.Build;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -498,7 +501,11 @@ public class GlobDialog  extends Activity
 //      	if (wm==null)
       		wm = (WindowManager)m_c.getSystemService(Service.WINDOW_SERVICE);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-        lp.type = WindowManager.LayoutParams.TYPE_PHONE;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+			lp.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+		} else {
+			lp.type = WindowManager.LayoutParams.TYPE_PHONE;
+		}
 //        lp.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
         lp.gravity = Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL;
         lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
@@ -515,6 +522,12 @@ public class GlobDialog  extends Activity
         lp.dimAmount = (float) 0.2;
         Layout(lp);
         m_view = createView();
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+    		if (!Perm.checkPermission(m_c)) {
+    			st.toastLong(R.string.perm_not_all_perm);
+    			return;
+    		}
+        }
         gbshow = true;
 //        m_view.setOnClickListener(m_clkListener);
 //        m_view.setBackgroundColor(th.getValue(th.ALERT_WINDOW_BACK));
@@ -526,7 +539,11 @@ public class GlobDialog  extends Activity
       		finish();
    		wm = (WindowManager)m_c.getSystemService(Service.WINDOW_SERVICE);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
-        lp.type = WindowManager.LayoutParams.TYPE_PHONE;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+			lp.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+		} else {
+			lp.type = WindowManager.LayoutParams.TYPE_PHONE;
+		}
 //        lp.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
         lp.gravity = Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL;
         lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
@@ -538,6 +555,12 @@ public class GlobDialog  extends Activity
         lp.dimAmount = (float) 0.2;
         Layout(lp);
         m_view = createViewEdit(txt);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+    		if (!Perm.checkPermission(m_c)) {
+    			st.toastLong(R.string.perm_not_all_perm);
+    			return;
+    		}
+        }
       	wm.addView(m_view, lp);
         gbshow = true;
     }
@@ -547,7 +570,11 @@ public class GlobDialog  extends Activity
       		wm = (WindowManager)m_c.getSystemService(Service.WINDOW_SERVICE);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
         
-        lp.type = WindowManager.LayoutParams.TYPE_PHONE;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+			lp.type = WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY;
+		} else {
+			lp.type = WindowManager.LayoutParams.TYPE_PHONE;
+		}
 //        lp.type = WindowManager.LayoutParams.TYPE_SYSTEM_ERROR;
         lp.gravity = Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL;
         lp.width = WindowManager.LayoutParams.WRAP_CONTENT;
@@ -564,6 +591,12 @@ public class GlobDialog  extends Activity
         	m_view = createViewListArray();
         m_view.setOnKeyListener(win_onKeyListener);
 //        m_view.setBackgroundColor(th.getValue(th.ALERT_WINDOW_BACK));
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+    		if (!Perm.checkPermission(m_c)) {
+    			st.toastLong(R.string.perm_not_all_perm);
+    			return;
+    		}
+        }
         wm.addView(m_view, lp);
         gbshow = true;
     }
