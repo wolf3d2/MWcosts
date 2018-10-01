@@ -9,6 +9,7 @@ import com.mwcorp.dialog.Dlg;
 import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.app.AppOpsManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -57,6 +58,9 @@ public class Perm {
 			if (res!=PackageManager.PERMISSION_GRANTED)
 				if (ss[i].contains(PERM_SYSTEM_ALERT)) {
 					if (Settings.canDrawOverlays(act)) {
+// !!!						
+//						AppOpsManager kk;
+//						kk.checkOp(op, uid, packageName)
 						continue;
 					}
 				return false;

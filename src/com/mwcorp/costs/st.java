@@ -14,6 +14,8 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import com.mwcorp.costs.var.myCur;
+import com.mwcorp.dialog.Dlg;
+import com.mwcorp.perm.Perm;
 import com.mwcorp.tools.GlobDialog;
 
 import android.app.Activity;
@@ -666,5 +668,21 @@ public class st extends var
     	ret = ""+ cel/100+ret;
     	return ret;
     }
+	public static boolean requestPermission(final Activity inst)
+	{
+		if (!Perm.checkPermission(inst)) {
+			Dlg.helpDialog(inst, inst.getString(R.string.perm_expl1), new st.UniObserver() {
+				
+				@Override
+				public int OnObserver(Object param1, Object param2) {
+					String[] perms = Perm.getPermissionStartArray();
+					Perm.requestPermission(inst, perms, Perm.RPC);
+					return 0;
+				}
+			});
+			return false;
+		}
+		return true;
+	}
 
 }

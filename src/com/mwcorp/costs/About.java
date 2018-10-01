@@ -1,5 +1,6 @@
 package com.mwcorp.costs;
 
+import com.mwcorp.dialog.Dlg;
 import com.mwcorp.tools.GlobDialog;
 import com.mwcorp.tools.Mail;
 
@@ -71,7 +72,8 @@ public class About extends Activity
     }
     public void onClickDiary(View view) 
     {
-    	st.help(st.getAssetsFile(inst, "_diary_MWcosts.txt"), inst);
+		Dlg.helpDialog(inst, st.getAssetsFile(inst, "_diary_MWcosts.txt"));
+    	//st.help(st.getAssetsFile(inst, "_diary_MWcosts.txt"), inst);
     }
     public void onClickFeedback(View view) 
     {

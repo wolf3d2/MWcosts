@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
 	//long TIME_MONTH = 5l * 60l * 1000l;
 	// юзер нажал на Нет в просьбе оценить
 	// (время до повторного срабатывания просьбы оценить
-	long TIME_NEGATIVE_CLICK = 1000l * 3600l * 24l * 3l;
+	long TIME_NEGATIVE_CLICK = 1000l * 3600l * 24l * 1l;
 	//long TIME_NEGATIVE_CLICK = 1000l * 2l*60l;
 	String START_TIME = "start_time";
 	String RATE_APP = "rate_app";
@@ -104,6 +104,7 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		// настройки читаются в App.java
 		// try{
 		// Pref.init(this);
 		// if (mainList != null&&mainList.size()>0)
@@ -145,7 +146,7 @@ public class MainActivity extends Activity {
 		add = (Button) toppanel.findViewById(R.id.main_add);
 		
 		// проверка разрешений
-		if (!requestPermission())
+		if (!st.requestPermission(inst))
 			return;
 
 
@@ -236,30 +237,34 @@ public class MainActivity extends Activity {
 //			if (rate_app.compareToIgnoreCase("0") == 0)
 //				rateApp();
 		}
-//		String scurtime = "dd.MM.yyyy HH:mm:ss";
-//		Date dt = new Date();
-//		dt.setTime(curtime);
-//		SimpleDateFormat sdf = new SimpleDateFormat(scurtime);
-//		scurtime = sdf.format(dt);
-//		String spartime= "dd.MM.yyyy HH:mm:ss";
-//		dt = new Date();
-//		dt.setTime(partime);
-//		sdf = new SimpleDateFormat(spartime);
-//		scurtime = scurtime;
-//		spartime = sdf.format(dt);
-		
+		String scurtime = "dd.MM.yyyy HH:mm:ss";
+		Date dt = new Date();
+		dt.setTime(curtime);
+		SimpleDateFormat sdf = new SimpleDateFormat(scurtime);
+		scurtime = sdf.format(dt);
+		String spartime= "dd.MM.yyyy HH:mm:ss";
+		dt = new Date();
+		dt.setTime(partime);
+		sdf = new SimpleDateFormat(spartime);
+		scurtime = scurtime;
+		spartime = sdf.format(dt);
+		if (partime>curtime + TIME_MONTH) {
+			partime = curtime;
+			saveIniParam(START_TIME, var.STR_NULL + (long)(partime+TIME_MONTH), path);
+		}
 
 		if (curtime > partime + TIME_MONTH) {
 			partime = curtime;
 			saveIniParam(START_TIME, var.STR_NULL + (long)(partime+TIME_MONTH), path);
 		}
-		if (curtime > partime&& rate_app.compareToIgnoreCase("0") == 0)
-			rateApp();
 		if (new_vers) {
 			saveIniParam(VERSION_CODE, st.getAppVersionCode(this), path);
 			new_vers = false;
 			viewDiary();
 		}
+		else if (curtime > partime&& rate_app.compareToIgnoreCase("0") == 0)
+			rateApp();
+
 		st.CurLoad();
 		rlv = (ListView) findViewById(R.id.main_listView);
 
@@ -329,7 +334,7 @@ public class MainActivity extends Activity {
 		// }
 		if (view.getId()==R.id.main_exitapp)
 			finish();
-		if (!requestPermission())
+		if (!st.requestPermission(inst))
 			return;
 		switch (view.getId()) {
 		case R.id.main_cur:
@@ -606,28 +611,22 @@ public class MainActivity extends Activity {
 		} catch (Throwable e) {
 			st.logEx(e);
 		}
-		GlobDialog gd = new GlobDialog(inst);
-		gd.set(R.string.error_msg, R.string.yes, R.string.no);
-		gd.setObserver(new st.UniObserver() {
+		new Dlg.RunOnYes(inst, inst.getString(R.string.error_msg)) {
+			
 			@Override
-			public int OnObserver(Object param1, Object param2) {
-				if (((Integer) param1).intValue() == AlertDialog.BUTTON_POSITIVE) {
-					// File f = (File)userParam;
-					if (file_crash != null) {
-						Mail.sendFeedback(inst, file_crash);
-						file_crash.delete();
-						file_crash = null;
-					}
+			public void run() {
+				// File f = (File)userParam;
+				if (file_crash != null) {
+					Mail.sendFeedback(inst, file_crash);
+					file_crash.delete();
+					file_crash = null;
 				}
 				if (file_crash != null) {
 					file_crash.delete();
 					file_crash = null;
 				}
-				return 0;
 			}
-		});
-		gd.showAlert();
-
+		};
 		return true;
 	}
 
@@ -931,7 +930,8 @@ public class MainActivity extends Activity {
 	}
 
 	public void viewDiary() {
-		st.help(st.getAssetsFile(inst, "_diary_MWcosts.txt"), inst);
+		Dlg.helpDialog(inst, st.getAssetsFile(inst, "_diary_MWcosts.txt"));
+		//st.help(st.getAssetsFile(inst, "_diary_MWcosts.txt"), inst);
 	}
 
 	public boolean onKeyLongPress(int keyCode, KeyEvent event) {
@@ -1080,21 +1080,5 @@ public class MainActivity extends Activity {
         	ss =al.toArray(ss);
         	Perm.postRequestPermission(inst,ss);
     	}
-	}
-	public boolean requestPermission()
-	{
-		if (!Perm.checkPermission(inst)) {
-			Dlg.helpDialog(inst, inst.getString(R.string.perm_expl1), new st.UniObserver() {
-				
-				@Override
-				public int OnObserver(Object param1, Object param2) {
-					String[] perms = Perm.getPermissionStartArray();
-					Perm.requestPermission(inst, perms, Perm.RPC);
-					return 0;
-				}
-			});
-			return false;
-		}
-		return true;
 	}
 }

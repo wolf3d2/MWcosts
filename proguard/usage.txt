@@ -1453,7 +1453,7 @@ com.google.android.gms.internal.zzr
 com.google.android.gms.internal.zzr$zza
 com.google.android.gms.internal.zzr$zza$zza
 com.mwcorp.costs.About:
-    65:67:public void onClick1(android.view.View)
+    66:68:public void onClick1(android.view.View)
 com.mwcorp.costs.Ads:
     19:19:Ads()
     143:143:public static void destroy()
@@ -1494,18 +1494,20 @@ com.mwcorp.costs.st:
     private static final int MAX_STACK_STRING
     public static final java.lang.String SAVE_CRASH
     private static final java.lang.String CAUSED_BY
-    46:46:public st()
-    333:333:public static boolean CurCheckRecord(com.mwcorp.costs.var$myCur)
-    587:587:public static int getDisplayWidth(android.content.Context)
-    591:591:public static int getDisplayHeight(android.content.Context)
-    595:595:public static float screenDensity(android.content.Context)
-    614:614:public static boolean isEven(float)
-    628:629:public static void help(int,android.content.Context)
-    648:667:public static java.lang.String getKBString(long)
+    48:48:public st()
+    335:335:public static boolean CurCheckRecord(com.mwcorp.costs.var$myCur)
+    589:589:public static int getDisplayWidth(android.content.Context)
+    593:593:public static int getDisplayHeight(android.content.Context)
+    597:597:public static float screenDensity(android.content.Context)
+    616:616:public static boolean isEven(float)
+    630:631:public static void help(int,android.content.Context)
+    635:647:public static void help(java.lang.String,android.content.Context)
+    650:669:public static java.lang.String getKBString(long)
+com.mwcorp.costs.st$2
 com.mwcorp.costs.st$UniObserver:
     java.lang.Object m_param1
-    59:63:public st$UniObserver(java.lang.Object,java.lang.Object)
-    69:69:public int Observ()
+    61:65:public st$UniObserver(java.lang.Object,java.lang.Object)
+    71:71:public int Observ()
 com.mwcorp.costs.th:
     public static final int ALERT_WINDOW_BACK
     public static final int ALERT_WINDOW_TEXT_LIST_BUTTON
@@ -1542,19 +1544,15 @@ com.mwcorp.dialog.Dlg:
     15:15:public Dlg()
     47:55:public static android.app.AlertDialog CustomDialog(android.content.Context,android.view.View,java.lang.String,java.lang.String,java.lang.String,com.mwcorp.costs.st$UniObserver)
     60:75:public static android.app.AlertDialog CustomViewAndMenu(android.content.Context,android.view.View,android.widget.ListAdapter,java.lang.String,com.mwcorp.costs.st$UniObserver)
-    100:107:public static android.app.AlertDialog yesNoDialog(android.content.Context,java.lang.String,com.mwcorp.costs.st$UniObserver)
     111:118:public static android.app.AlertDialog yesNoDialog(android.content.Context,java.lang.String,int,int,com.mwcorp.costs.st$UniObserver)
-    153:167:public static android.app.AlertDialog helpDialog(android.content.Context,java.lang.String)
     171:173:public static void dismiss()
 com.mwcorp.dialog.Dlg$1
-com.mwcorp.dialog.Dlg$3
-com.mwcorp.dialog.Dlg$RunOnYes
-com.mwcorp.dialog.Dlg$RunOnYes$1
 com.mwcorp.perm.Perm:
-    19:19:public Perm()
+    20:20:public Perm()
 com.mwcorp.tools.GlobDialog:
     public static final int NO_FINISH
-    631:633:public void setListArray(int,int,int,int,java.util.ArrayList)
+    648:650:public void setListArray(int,int,int,int,java.util.ArrayList)
+    664:665:public void set(java.lang.String,int,int)
 com.mwcorp.tools.Mail:
     13:13:public Mail()
 com.mwcorp.tools.Pref:

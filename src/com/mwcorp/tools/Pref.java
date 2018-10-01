@@ -36,6 +36,10 @@ public class Pref
 //		INSTANCE.mPref = c.getSharedPreferences("settings", 0);
 		//INSTANCE.mVolumeKeysState = INSTANCE.mPrefs.getInt(VOLUME_KEYS_STATE, VOLUME_KEYS_NONE);
 	}
+	public static void removePreferences()
+	{
+		get().edit().remove("newrec_col_tb");
+	}
 // читаем настройки
 	public static void readPreference()
 	{
@@ -66,10 +70,6 @@ public class Pref
 		var.tb_line_port = getInt(PR_TOOLBAR_LINE_COUNT_PORT, 1);
 		var.tb_line_land = getInt(PR_TOOLBAR_LINE_COUNT_LAND, 1);
 		var.skin_app = st.str2int(getString(PR_SKIN_APP, "0"), 0);
-	}
-	public static void removePreferences()
-	{
-		get().edit().remove("newrec_col_tb");
 	}
 //	public static void setFullScreen(boolean fullscreen)
 //	{

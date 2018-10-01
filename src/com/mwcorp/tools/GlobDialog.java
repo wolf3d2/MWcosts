@@ -24,6 +24,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
+import android.view.WindowManager.BadTokenException;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -528,10 +529,14 @@ public class GlobDialog  extends Activity
     			return;
     		}
         }
-        gbshow = true;
-//        m_view.setOnClickListener(m_clkListener);
-//        m_view.setBackgroundColor(th.getValue(th.ALERT_WINDOW_BACK));
-        wm.addView(m_view, lp);
+        try {
+          	wm.addView(m_view, lp);
+            gbshow = true;
+		} catch (BadTokenException e) {
+    		if (!Perm.checkPermission(m_c)) {
+    			st.toastLong(R.string.perm_not_all_perm);
+    		}
+		}
     }
     public void showEdit(String txt)
     {
@@ -561,8 +566,14 @@ public class GlobDialog  extends Activity
     			return;
     		}
         }
-      	wm.addView(m_view, lp);
-        gbshow = true;
+        try {
+          	wm.addView(m_view, lp);
+            gbshow = true;
+		} catch (BadTokenException e) {
+    		if (!Perm.checkPermission(m_c)) {
+    			st.toastLong(R.string.perm_not_all_perm);
+    		}
+		}
     }
     public void showList()
     {
@@ -597,8 +608,14 @@ public class GlobDialog  extends Activity
     			return;
     		}
         }
-        wm.addView(m_view, lp);
-        gbshow = true;
+        try {
+          	wm.addView(m_view, lp);
+            gbshow = true;
+		} catch (BadTokenException e) {
+    		if (!Perm.checkPermission(m_c)) {
+    			st.toastLong(R.string.perm_not_all_perm);
+    		}
+		}
     }
     public void finish()
     {
