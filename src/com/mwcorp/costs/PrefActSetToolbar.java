@@ -2,6 +2,11 @@ package com.mwcorp.costs;
 
 import java.util.ArrayList;
 
+import com.mwcorp.costs.R;
+import com.mwcorp.costs.R.array;
+import com.mwcorp.costs.R.id;
+import com.mwcorp.costs.R.layout;
+import com.mwcorp.costs.R.string;
 import com.mwcorp.costs.var.ArrayToolbar;
 import com.mwcorp.dialog.Dlg;
 import com.mwcorp.tools.Pref;

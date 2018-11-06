@@ -23,6 +23,7 @@ public class Pref
 	public static String PR_NEWREC_BIG_TOOLBAR = "newrec_big_toolbar";
 	public static String PR_NEWREC_SHOW_TOOLBAR = "newrec_show_toolbar";
 	public static String PR_NEWREC_EDIT_SIZE_TEXT = "newrec_size_text";
+	public static String PR_NEWREC_SUM_SIZE = "newrec_size_sum";
 	public static String PR_AUTOCALC = "auto_calculate";
 	public static String PR_NEWREC_FULLSCREEN = "newrec_fullscreen";
 	public static String PR_SKIN_APP = "skin_app";
@@ -50,6 +51,7 @@ public class Pref
 		var.fl_newrec_fullscreen = getBoolean(PR_NEWREC_FULLSCREEN, false);
 		var.fl_newrec_big_toolbar = getBoolean(Pref.PR_NEWREC_BIG_TOOLBAR, false);
 		var.fl_newrec_show_toolbar = getBoolean(PR_NEWREC_SHOW_TOOLBAR, true);
+		var.fl_newrec_big_size_sum = getBoolean(PR_NEWREC_SUM_SIZE, false);
 		tmp = getString(Pref.PR_NEWREC_EDIT_SIZE_TEXT, "16");
 		var.newrec_size_text = st.str2hex(tmp, 10);
 		tmp = getString(Pref.PR_TOOLBAR_BUTTON, Pref.PR_TOOLBAR_BUTTON_DEF);

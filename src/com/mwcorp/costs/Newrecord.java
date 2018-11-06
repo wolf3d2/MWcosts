@@ -143,6 +143,10 @@ public class Newrecord extends Activity {
 		im_edit.setVisibility(View.GONE);
 		tv_suminbase = (TextView) v.findViewById(R.id.newrec_suminbase);
 		tv_suminbase.setTextColor(th.getValue(th.NEWREC_TOPPANEL_SUM_TEXT));
+		tv_suminbase.setTextSize(12);
+		if (var.fl_newrec_big_size_sum) {
+			tv_suminbase.setTextSize(18);
+		}
 		TextView tv = (TextView) v.findViewById(R.id.newrec_changed);
 		tv.setTextColor(th.getValue(th.NEWREC_TOPPANEL_SUM_TEXT));
 		tv = (TextView) v.findViewById(R.id.newrec_readonly);

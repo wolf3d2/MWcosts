@@ -121,6 +121,8 @@
     <string name="cat_newrec_desc">Settings editor</string>
     <string name="cat_newrec_size_text">Text size</string>
     <string name="cat_newrec_size_text_desc">Text size in the editor\nDefault - 16</string>
+    <string name="cat_newrec_size_sum">Увеличенный размер итоговых сумм</string>
+    <string name="cat_newrec_size_sum_desc">Для больших экранов</string>
     
 <!-- настройки для панели инструментов  -->
     <string name="scr_toolbar">Toolbar</string>

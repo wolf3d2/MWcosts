@@ -1,6 +1,10 @@
 package com.mwcorp.costs;
 
 import com.mwcorp.costs.R;
+import com.mwcorp.costs.R.array;
+import com.mwcorp.costs.R.layout;
+import com.mwcorp.costs.R.string;
+import com.mwcorp.costs.R.xml;
 import com.mwcorp.tools.Pref;
 import android.annotation.SuppressLint;
 import android.content.Context;

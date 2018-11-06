@@ -24,6 +24,7 @@ public class var
 	public static boolean fl_newrec_fullscreen = false;
 	public static boolean auto_calculate = false;
 	public static boolean fl_newrec_show_toolbar = true;
+	public static boolean fl_newrec_big_size_sum = false;
 	public static boolean fl_newrec_big_toolbar = false;
 	public static int id_cur = -1;
 	// как заполнять кнопки панели инструментов

@@ -107,8 +107,10 @@ final class Ads
 			adRequest = new AdRequest.Builder()
 	                .build();
 		}
-        ads.loadAd(adRequest);
-		
+		try {
+	        ads.loadAd(adRequest);
+		} catch (Throwable e) {
+		}
 	}
 	public static LinearLayout getLinearLayout(Context c, int numAds){
 		LinearLayout ll= null;

@@ -120,6 +120,8 @@
     <string name="cat_newrec_desc">Параметры редактора</string>
     <string name="cat_newrec_size_text">Размер текста</string>
     <string name="cat_newrec_size_text_desc">Размер текста в редакторе\nПо умолчанию - 16</string>
+    <string name="cat_newrec_size_sum">Увеличенный размер итоговых сумм</string>
+    <string name="cat_newrec_size_sum_desc">Для больших экранов</string>
     
 <!-- настройки для панели инструментов  -->
     <string name="scr_toolbar">Панель инструментов</string>

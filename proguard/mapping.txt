@@ -7270,16 +7270,17 @@ com.mwcorp.costs.var -> com.mwcorp.costs.av:
     boolean fl_newrec_fullscreen -> k
     boolean auto_calculate -> l
     boolean fl_newrec_show_toolbar -> m
-    boolean fl_newrec_big_toolbar -> n
-    int id_cur -> o
-    int tb_layout_type -> p
-    int tb_line_port -> q
-    int tb_line_land -> r
-    java.lang.String file_desc -> s
-    java.lang.String create_inifile -> t
-    java.lang.String STR_NULL -> u
-    java.lang.String STR_SPACE -> v
-    java.lang.String STR_CR -> w
+    boolean fl_newrec_big_size_sum -> n
+    boolean fl_newrec_big_toolbar -> o
+    int id_cur -> p
+    int tb_layout_type -> q
+    int tb_line_port -> r
+    int tb_line_land -> s
+    java.lang.String file_desc -> t
+    java.lang.String create_inifile -> u
+    java.lang.String STR_NULL -> v
+    java.lang.String STR_SPACE -> w
+    java.lang.String STR_CR -> x
     void <clinit>() -> <clinit>
 com.mwcorp.costs.var$ArrayToolbar -> com.mwcorp.costs.aw:
     int id -> a
@@ -7444,8 +7445,8 @@ com.mwcorp.tools.Mail -> com.mwcorp.tools.i:
     void sendFeedback(android.content.Context) -> a
     void sendFeedback(android.content.Context,java.io.File) -> a
 com.mwcorp.tools.Pref -> com.mwcorp.tools.j:
-    java.lang.String tmp -> m
-    com.mwcorp.tools.Pref INSTANCE -> n
+    java.lang.String tmp -> n
+    com.mwcorp.tools.Pref INSTANCE -> o
     android.content.SharedPreferences mPref -> a
     java.lang.String PR_VIEW_MODE -> b
     java.lang.String PR_TOOLBAR_BUTTON -> c
@@ -7455,9 +7456,10 @@ com.mwcorp.tools.Pref -> com.mwcorp.tools.j:
     java.lang.String PR_NEWREC_BIG_TOOLBAR -> g
     java.lang.String PR_NEWREC_SHOW_TOOLBAR -> h
     java.lang.String PR_NEWREC_EDIT_SIZE_TEXT -> i
-    java.lang.String PR_AUTOCALC -> j
-    java.lang.String PR_NEWREC_FULLSCREEN -> k
-    java.lang.String PR_SKIN_APP -> l
+    java.lang.String PR_NEWREC_SUM_SIZE -> j
+    java.lang.String PR_AUTOCALC -> k
+    java.lang.String PR_NEWREC_FULLSCREEN -> l
+    java.lang.String PR_SKIN_APP -> m
     void <clinit>() -> <clinit>
     void <init>() -> <init>
     void init(android.content.Context) -> a

@@ -12,6 +12,7 @@
     android:orientation="horizontal" 
     >
 
+<!-- размер текста задаётся программно в зависимости от настройки -->
 <TextView
     android:id="@+id/newrec_suminbase"
     android:layout_width="wrap_content"
@@ -21,7 +22,6 @@
     android:layout_toRightOf="@+id/newrec_readonly"
     android:text="@+string/sum"
     android:onClick="onClick"
-    android:textSize="12dp"
     android:visibility="visible" 
     />
 

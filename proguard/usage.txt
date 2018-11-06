@@ -1456,9 +1456,9 @@ com.mwcorp.costs.About:
     66:68:public void onClick1(android.view.View)
 com.mwcorp.costs.Ads:
     19:19:Ads()
-    143:143:public static void destroy()
-    149:149:public static void pause()
-    151:156:public static void resume()
+    145:145:public static void destroy()
+    151:151:public static void pause()
+    153:158:public static void resume()
 com.mwcorp.costs.BuildConfig
 com.mwcorp.costs.MainActivity:
     public static final java.lang.String VERS
@@ -1556,8 +1556,8 @@ com.mwcorp.tools.GlobDialog:
 com.mwcorp.tools.Mail:
     13:13:public Mail()
 com.mwcorp.tools.Pref:
-    92:94:public static void setInt(java.lang.String,int)
-    97:99:public static void setString(java.lang.String,java.lang.String)
-    102:104:public static void setBoolean(java.lang.String,boolean)
+    94:96:public static void setInt(java.lang.String,int)
+    99:101:public static void setString(java.lang.String,java.lang.String)
+    104:106:public static void setBoolean(java.lang.String,boolean)
 com.mwcorp.tools.UtilText:
     6:6:public UtilText()
