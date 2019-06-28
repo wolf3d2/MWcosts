@@ -64,7 +64,7 @@
 <!-- about activity -->
     <string name="about_autor">Autor: Michail Wyazenkin (MWcorp)\nNickname on 4pda.ru - wolf3d2\n</string>
     <string name="about_desc">The program is to write for himself and comes \"as is\".\n\nThe work program was tested with the keyboard jbak2 keyboard (in other app)</string>
-    <string name="about_other_app">Other apps</string>
+    <string name="about_other_app">(Ad) Other apps</string>
     <string name="about_other">\n<b>Other:</b>\nThe topic of discussion: http://4pda.ru/forum/index.php?showtopic=747074 \n\nIcon app: myha781 (4pda.ru)</string>
     <string name="about_diary">History version</string>
     
