@@ -111,6 +111,11 @@
     <string name="off">Off</string>
     <string name="selection">Selection</string>
     <string name="home_folder">Home folder</string>
+
+    <string name="backup_setting">Backup settings</string>
+    <string name="def_setting">Default setting</string>
+    <string name="load_setting">Load setting</string>
+    <string name="save_setting">Save setting</string>
     
 <!--  редактировать имя папки или пометка удалить -->
     <string name="folder0">Edit folder</string>

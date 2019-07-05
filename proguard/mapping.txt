@@ -7105,6 +7105,7 @@ com.mwcorp.costs.Newrecord$9 -> com.mwcorp.costs.ah:
 com.mwcorp.costs.PrefActMain -> com.mwcorp.costs.PrefActMain:
     java.lang.String prefkey -> a
     com.mwcorp.costs.PrefActMain inst -> b
+    java.lang.String FILENAME_SETTING -> c
     void <clinit>() -> <clinit>
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
@@ -7117,6 +7118,17 @@ com.mwcorp.costs.PrefActMain -> com.mwcorp.costs.PrefActMain:
     void setSummary(java.lang.String,int,java.lang.String) -> b
     java.lang.String strVal(java.lang.String) -> a
     void onBackPressed() -> onBackPressed
+    void backup(android.content.Context,boolean) -> b
+    int backupPref(android.content.Context,boolean) -> a
+com.mwcorp.costs.PrefActMain$1 -> com.mwcorp.costs.ai:
+    com.mwcorp.costs.PrefActMain this$0 -> a
+    void <init>(com.mwcorp.costs.PrefActMain) -> <init>
+    int OnObserver$2838e5a0(java.lang.Object) -> a
+com.mwcorp.costs.PrefActMain$2 -> com.mwcorp.costs.aj:
+    android.content.Context val$cont -> a
+    boolean val$bSave -> b
+    void <init>(android.content.Context,boolean) -> <init>
+    int OnObserver$2838e5a0(java.lang.Object) -> a
 com.mwcorp.costs.PrefActSetToolbar -> com.mwcorp.costs.PrefActSetToolbar:
     com.mwcorp.costs.PrefActSetToolbar inst -> a
     android.widget.ArrayAdapter ar_adapt_tb -> b
@@ -7137,29 +7149,29 @@ com.mwcorp.costs.PrefActSetToolbar -> com.mwcorp.costs.PrefActSetToolbar:
     void onClick(android.view.View) -> onClick
     android.widget.Button createBtn$457e87c1(int,java.lang.String,boolean,int) -> a
     void llupdate() -> a
-com.mwcorp.costs.PrefActSetToolbar$1 -> com.mwcorp.costs.ai:
+com.mwcorp.costs.PrefActSetToolbar$1 -> com.mwcorp.costs.ak:
     com.mwcorp.costs.PrefActSetToolbar this$0 -> a
     void <init>(com.mwcorp.costs.PrefActSetToolbar) -> <init>
     void afterTextChanged(android.text.Editable) -> afterTextChanged
     void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
     void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
-com.mwcorp.costs.PrefActSetToolbar$2 -> com.mwcorp.costs.aj:
+com.mwcorp.costs.PrefActSetToolbar$2 -> com.mwcorp.costs.al:
     com.mwcorp.costs.PrefActSetToolbar this$0 -> a
     void <init>(com.mwcorp.costs.PrefActSetToolbar) -> <init>
     void onClick(android.view.View) -> onClick
-com.mwcorp.costs.PrefActSetToolbar$3 -> com.mwcorp.costs.ak:
+com.mwcorp.costs.PrefActSetToolbar$3 -> com.mwcorp.costs.am:
     com.mwcorp.costs.PrefActSetToolbar this$0 -> a
     void <init>(com.mwcorp.costs.PrefActSetToolbar) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.PrefActSetToolbar$4 -> com.mwcorp.costs.al:
+com.mwcorp.costs.PrefActSetToolbar$4 -> com.mwcorp.costs.an:
     com.mwcorp.costs.PrefActSetToolbar this$0 -> a
     void <init>(com.mwcorp.costs.PrefActSetToolbar) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.PrefActSetToolbar$5 -> com.mwcorp.costs.am:
+com.mwcorp.costs.PrefActSetToolbar$5 -> com.mwcorp.costs.ao:
     com.mwcorp.costs.PrefActSetToolbar this$0 -> a
     void <init>(com.mwcorp.costs.PrefActSetToolbar) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.an -> com.mwcorp.costs.an:
+com.mwcorp.costs.an -> com.mwcorp.costs.ap:
     java.util.ArrayList cur_rec -> a
     java.lang.String basecursymb -> b
     java.lang.String NOT_COUNTED -> c
@@ -7167,7 +7179,7 @@ com.mwcorp.costs.an -> com.mwcorp.costs.an:
     void analizeText(java.lang.String) -> a
     void analizeParagrapf(java.lang.String) -> b
     void addCurrentCurrency(com.mwcorp.costs.var$RecordCurrency) -> a
-com.mwcorp.costs.rec -> com.mwcorp.costs.ao:
+com.mwcorp.costs.rec -> com.mwcorp.costs.aq:
     java.lang.String NAME -> a
     java.lang.String DATE_EDIT -> b
     java.lang.String PATH -> c
@@ -7196,12 +7208,13 @@ com.mwcorp.costs.rec -> com.mwcorp.costs.ao:
     java.lang.String getBackFolder() -> f
     void delini(java.lang.String) -> d
     boolean deleteDir(java.io.File) -> a
-com.mwcorp.costs.st -> com.mwcorp.costs.ap:
+com.mwcorp.costs.st -> com.mwcorp.costs.ar:
     int KB -> a
     void <clinit>() -> <clinit>
     void sleep(int) -> a
     java.lang.String getPathAppFolder() -> a
     boolean setPathAppFolder() -> b
+    java.io.File[] getFilesByExt(java.io.File,java.lang.String) -> a
     int str2int$505cff29(java.lang.String) -> a
     int parseInt$505cff29(java.lang.String) -> h
     int str2hex$505cff29(java.lang.String) -> b
@@ -7216,10 +7229,10 @@ com.mwcorp.costs.st -> com.mwcorp.costs.ap:
     void toastLong$13462e() -> d
     void toastLong(java.lang.String) -> e
     void CurLoad() -> e
-    void CurDefault() -> k
+    void CurDefault() -> l
     int CurRnd() -> f
     java.lang.String Rnd() -> g
-    boolean setBaseCurrency() -> l
+    boolean setBaseCurrency() -> m
     boolean CurSave() -> h
     java.lang.String strFile(java.io.File) -> a
     boolean strToFile(java.lang.String,java.io.File) -> a
@@ -7238,26 +7251,31 @@ com.mwcorp.costs.st -> com.mwcorp.costs.ap:
     void runOtherApp() -> i
     boolean isDebugEmulator() -> j
     boolean requestPermission(android.app.Activity) -> b
-com.mwcorp.costs.st$1 -> com.mwcorp.costs.aq:
+    void exitApp() -> k
+com.mwcorp.costs.st$1 -> com.mwcorp.costs.as:
+    java.lang.String val$ext -> a
+    void <init>(java.lang.String) -> <init>
+    boolean accept(java.io.File,java.lang.String) -> accept
+com.mwcorp.costs.st$2 -> com.mwcorp.costs.at:
     android.widget.EditText val$et -> a
     void <init>(android.widget.EditText) -> <init>
     void run() -> run
-com.mwcorp.costs.st$3 -> com.mwcorp.costs.ar:
+com.mwcorp.costs.st$4 -> com.mwcorp.costs.au:
     android.app.Activity val$inst -> a
     void <init>(android.app.Activity) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.st$UniObserver -> com.mwcorp.costs.as:
+com.mwcorp.costs.st$UniObserver -> com.mwcorp.costs.av:
     void <init>() -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.th -> com.mwcorp.costs.at:
+com.mwcorp.costs.th -> com.mwcorp.costs.aw:
     java.util.ArrayList getSkinLight() -> a
     int getValue(int) -> a
     void setTheme(android.app.Activity) -> a
-com.mwcorp.costs.th$Theme -> com.mwcorp.costs.au:
+com.mwcorp.costs.th$Theme -> com.mwcorp.costs.ax:
     int key -> a
     long val -> b
     void <init>(int,int) -> <init>
-com.mwcorp.costs.var -> com.mwcorp.costs.av:
+com.mwcorp.costs.var -> com.mwcorp.costs.ay:
     int skin_app -> b
     int size_text_listadapter -> c
     java.lang.String filename -> d
@@ -7280,13 +7298,14 @@ com.mwcorp.costs.var -> com.mwcorp.costs.av:
     java.lang.String create_inifile -> u
     java.lang.String STR_NULL -> v
     java.lang.String STR_SPACE -> w
-    java.lang.String STR_CR -> x
+    java.lang.String STR_lF -> x
+    java.lang.String STR_ERROR -> y
     void <clinit>() -> <clinit>
-com.mwcorp.costs.var$ArrayToolbar -> com.mwcorp.costs.aw:
+com.mwcorp.costs.var$ArrayToolbar -> com.mwcorp.costs.az:
     int id -> a
     java.lang.String text -> b
     void <init>() -> <init>
-com.mwcorp.costs.var$FolderInfo -> com.mwcorp.costs.ax:
+com.mwcorp.costs.var$FolderInfo -> com.mwcorp.costs.ba:
     java.util.ArrayList cur -> a
     long dateedit -> b
     long date_calculate -> c
@@ -7297,12 +7316,12 @@ com.mwcorp.costs.var$FolderInfo -> com.mwcorp.costs.ax:
     int dir -> h
     boolean exist -> i
     void <init>() -> <init>
-com.mwcorp.costs.var$RecordCurrency -> com.mwcorp.costs.ay:
+com.mwcorp.costs.var$RecordCurrency -> com.mwcorp.costs.bb:
     java.lang.String symb -> a
     float value -> b
     long datecounted -> c
     void <init>() -> <init>
-com.mwcorp.costs.var$myCur -> com.mwcorp.costs.az:
+com.mwcorp.costs.var$myCur -> com.mwcorp.costs.bc:
     int id -> a
     java.lang.String cur_symb -> b
     java.lang.String name -> c

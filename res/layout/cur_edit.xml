@@ -25,8 +25,7 @@
     android:layout_above="@+id/llad_ce"
     android:layout_alignParentTop="true"
     android:minHeight="50dp"
-    android:paddingRight="7dp" 
-    >
+    android:paddingRight="7dp" >
 
 <RelativeLayout
     android:id="@+id/ll_curedit_main"

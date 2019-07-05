@@ -37,7 +37,8 @@ public class var
 	// константы
 	public static String STR_NULL = "";
 	public static String STR_SPACE = " ";
-	public static String STR_CR = "\n";
+	public static String STR_lF = "\n";
+	public static String STR_ERROR = "error";
 
 // класс для хранения валют
 	public static class myCur

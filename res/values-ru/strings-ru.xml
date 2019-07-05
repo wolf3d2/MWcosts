@@ -107,6 +107,11 @@
     <string name="off">Выкл.</string>
     <string name="selection">Выберите действие</string>
     <string name="home_folder">Домашняя папка</string>
+
+    <string name="backup_setting">Резервирование настроек</string>
+    <string name="def_setting">Настройки по умолчанию</string>
+    <string name="load_setting">Загрузить настройки</string>
+    <string name="save_setting">Сохранить настройки</string>
     
 <!-- новая запись -->
     <string name="sum">Всего в</string>

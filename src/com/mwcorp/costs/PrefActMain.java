@@ -1,12 +1,13 @@
 package com.mwcorp.costs;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import com.mwcorp.costs.R;
-import com.mwcorp.costs.R.array;
-import com.mwcorp.costs.R.layout;
-import com.mwcorp.costs.R.string;
-import com.mwcorp.costs.R.xml;
+import com.mwcorp.dialog.Dlg;
 import com.mwcorp.tools.Pref;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -14,12 +15,14 @@ import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
+import android.widget.Toast;
 
 @SuppressLint("NewApi")
 public class PrefActMain extends PreferenceActivity implements OnSharedPreferenceChangeListener 
 {
 	String prefkey = "";
 	static PrefActMain inst= null;
+	public static String FILENAME_SETTING = "settings_backup.xml";
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState) 
@@ -60,6 +63,28 @@ public class PrefActMain extends PreferenceActivity implements OnSharedPreferenc
         
         if ("newrec_set_tb".equals(prefkey)){
         	st.runAct(PrefActSetToolbar.class, this);
+        }
+        else if ("default_setting".equals(prefkey)){
+        	Dlg.yesNoDialog(inst, inst.getString(R.string.def_setting), new st.UniObserver() {
+				
+				@Override
+				public int OnObserver(Object param1, Object param2) {
+                    if(((Integer)param1).intValue()==AlertDialog.BUTTON_POSITIVE)
+                    {
+                    	Pref.get().edit().clear().commit();
+                    	System.exit(0);
+                    	st.toast(R.string.ok);
+                    }
+					
+					return 0;
+				}
+			});
+        }
+        else if ("save_setting".equals(prefkey)){
+        	backup(inst, true);
+        }
+        else if ("load_setting".equals(prefkey)){
+        	backup(inst, false);
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -128,4 +153,94 @@ public class PrefActMain extends PreferenceActivity implements OnSharedPreferenc
     	if (MainActivity.inst !=null)
     		MainActivity.inst.recreate();
     }
+    public static void backup(final Context cont, final boolean bSave)
+    {
+        Dlg.yesNoDialog(cont, cont.getString(bSave?R.string.save_setting:R.string.load_setting)+" ?", new st.UniObserver()
+        {
+            @Override
+            public int OnObserver(Object param1, Object param2)
+            {
+                if(((Integer)param1).intValue()==AlertDialog.BUTTON_POSITIVE)
+                {
+                    int ret = backupPref(cont, bSave);
+                    try{
+                    if(ret==0)
+                        Toast.makeText(cont, st.STR_ERROR, 700).show();
+                    else if(ret==1)
+                    	if(!bSave)
+                    	{
+                    		st.exitApp();
+                    		//Toast.makeText(getApplicationContext(), R.string.reboot, Toast.LENGTH_LONG).show();                        
+                    	} else{
+                          Toast.makeText(cont, R.string.ok, 700).show();
+                    	}
+                   }
+                   catch(Throwable e)
+                    {
+                    	st.toast("error save/load setting");
+                    }
+                }
+                return 0;
+            }
+        });
+    }
+    static int backupPref(Context cont, boolean bSave)
+    {
+        try{
+            String appname = cont.getPackageName();
+            String path = getBackupPathAndName();
+            String prefDir = cont.getFilesDir().getParent()+"/shared_prefs/";
+            File ar[] = st.getFilesByExt(new File(prefDir), "xml");
+            if(ar==null||ar.length==0)
+                return 0;
+            File f = new File(path);
+            FileInputStream in = null;
+            FileOutputStream out = null;
+            if(bSave)
+            {
+            	for (File ff:ar) {
+            		if (ff.getName().contains(appname)) {
+                        in = new FileInputStream(ff.getAbsolutePath());
+            			break;
+            		}
+            	}
+            	if (in == null)
+            		return 0;
+                f.delete();
+                out = new FileOutputStream(f);
+            }
+            else
+            {
+                if(!f.exists())
+                {
+                    Toast.makeText(cont, "File not exist: "+path, 700).show();
+                    return -1;
+                }
+                for (int i=0; i< ar.length;i++) {
+                	if (ar[i].toString().indexOf(appname+"_preferences.xml")>=0) {
+                        out = new FileOutputStream(ar[i]);
+                	}
+                }
+                if (out==null)
+                	return -1;
+                in = new FileInputStream(f);
+            }
+            
+            byte b[] = new byte[in.available()];
+            in.read(b);
+            out.write(b);
+            out.flush();
+            in.close();
+            out.close();
+            return 1;
+        }
+        catch (Throwable e) {
+        }
+        return 0;
+    }
+    final static String getBackupPathAndName()
+    {
+        return st.getPathAppFolder()+"/"+FILENAME_SETTING;
+    }
+
 }

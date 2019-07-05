@@ -1,9 +1,6 @@
 package com.mwcorp.costs;
 
 import java.io.File;
-import java.io.FileDescriptor;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,6 +19,7 @@ import com.mwcorp.dialog.Dlg;
 import com.mwcorp.perm.Perm;
 import com.mwcorp.tools.GlobDialog;
 import com.mwcorp.tools.Mail;
+
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -31,11 +29,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -45,7 +41,6 @@ import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
@@ -174,8 +169,8 @@ public class MainActivity extends Activity {
 			try {
 				writer = new FileWriter(path, false);
 				String out1 = "rate_app=0\n";
-				out1 += START_TIME + "=" + (long)(curtime+TIME_MONTH) + var.STR_CR;
-				out1 += VERSION_CODE + "=" + vers + var.STR_CR;
+				out1 += START_TIME + "=" + (long)(curtime+TIME_MONTH) + var.STR_lF;
+				out1 += VERSION_CODE + "=" + vers + var.STR_lF;
 				writer.write(out1);
 				writer.close();
 				new_vers = false;

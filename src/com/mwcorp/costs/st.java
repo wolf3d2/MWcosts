@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
@@ -94,7 +95,22 @@ public class st extends var
 		
 		return true;
    	}
-	// переводит строку в int	
+    public static File[] getFilesByExt(File dir,final String ext)
+    {
+        return dir.listFiles(new FilenameFilter()
+        {
+            @Override
+            public boolean accept(File dir, String filename)
+            {
+                int pos = filename.lastIndexOf('.');
+                if(pos<0)return false;
+                if(ext.length()>0&&ext.charAt(0)!='.')
+                    pos++;
+                return filename.substring(pos).compareTo(ext)==0;
+            }
+        });
+    }
+/** переводит строку в int */	
     public static int str2int(String sss, int defValue)
     {
       	int i1=0;
@@ -683,6 +699,10 @@ public class st extends var
 			return false;
 		}
 		return true;
+	}
+ 	/** выход из приложения с выгрузкой из памяти */
+	public static void exitApp() {
+        System.exit(0);
 	}
 
 }

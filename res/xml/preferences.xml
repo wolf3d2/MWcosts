@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
 <!-- Запись -->
     <PreferenceScreen
         android:title="@string/cat_newrec" 
@@ -52,4 +53,17 @@
         android:summary="@string/skin_name_desc"
         />
 
+	<PreferenceScreen android:title="@string/backup_setting" >
+	    
+            <Preference
+                android:key="default_setting"
+                android:title="@string/def_setting" />
+            <Preference
+                android:key="save_setting"
+                android:title="@string/save_setting" />
+            <Preference
+                android:key="load_setting"
+                android:title="@string/load_setting" />
+            
+		</PreferenceScreen>
 </PreferenceScreen>

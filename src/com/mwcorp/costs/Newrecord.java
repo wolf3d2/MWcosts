@@ -79,7 +79,7 @@ public class Newrecord extends Activity {
 	final int ACTION_HIDE_KBD = 523;
 	final int ACTION_EXIT_APP = 524;
 
-	public static String START_FILENAME_DESCRIPTOR = "URI_TEXT_FILE://" + st.STR_CR;
+	public static String START_FILENAME_DESCRIPTOR = "URI_TEXT_FILE://" + st.STR_lF;
 	static Newrecord inst;
 
 	boolean fl_exit_app = false;
@@ -488,7 +488,7 @@ public class Newrecord extends Activity {
 		String txt = "";
 		if (var.filename.length() == 0) {
 			for (RecordCurrency cc : var.recordCur) {
-				txt += cc.symb + ": " + String.valueOf(cc.value) + st.STR_CR;
+				txt += cc.symb + ": " + String.valueOf(cc.value) + st.STR_lF;
 			}
 			if (txt.length() > 0)
 				txt = txt.substring(0, txt.length() - 1);
@@ -501,7 +501,7 @@ public class Newrecord extends Activity {
 			if (var.filename.startsWith(START_FILENAME_DESCRIPTOR))
 				tv_suminbase.setText("UNTITLED");
 			else
-				tv_suminbase.setText(getString(R.string.edit_file) + var.STR_CR + var.filename);
+				tv_suminbase.setText(getString(R.string.edit_file) + var.STR_lF + var.filename);
 		}
 		setChangegText();
 	}
@@ -720,7 +720,7 @@ public class Newrecord extends Activity {
 			if (!var.filename.isEmpty()&&!var.fl_view_mode)
 				return;
 			String out = tv_suminbase.getText().toString();
-			out = out.replaceAll(st.STR_CR, ", ");
+			out = out.replaceAll(st.STR_lF, ", ");
 			out +=".";
 			insertStr(out);
 			return;
@@ -869,7 +869,7 @@ public class Newrecord extends Activity {
 			String[] ar = txt.split(var.STR_SPACE);
 			txt = var.STR_NULL;
 			for (int i = 0; i < ar.length; i++) {
-				txt += ar[i] + var.STR_CR;
+				txt += ar[i] + var.STR_lF;
 			}
 			btn.setTextSize(7);
 		} else if (txt.length() > 8)

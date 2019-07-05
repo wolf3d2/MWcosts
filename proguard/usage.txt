@@ -1464,7 +1464,7 @@ com.mwcorp.costs.MainActivity:
     public static final java.lang.String VERS
     public static final java.lang.String SLASH
     android.widget.TextView tvpath
-    991:991:public void kbdHide()
+    986:986:public void kbdHide()
 com.mwcorp.costs.R
 com.mwcorp.costs.R$array
 com.mwcorp.costs.R$attr
@@ -1494,20 +1494,20 @@ com.mwcorp.costs.st:
     private static final int MAX_STACK_STRING
     public static final java.lang.String SAVE_CRASH
     private static final java.lang.String CAUSED_BY
-    48:48:public st()
-    335:335:public static boolean CurCheckRecord(com.mwcorp.costs.var$myCur)
-    589:589:public static int getDisplayWidth(android.content.Context)
-    593:593:public static int getDisplayHeight(android.content.Context)
-    597:597:public static float screenDensity(android.content.Context)
-    616:616:public static boolean isEven(float)
-    630:631:public static void help(int,android.content.Context)
-    635:647:public static void help(java.lang.String,android.content.Context)
-    650:669:public static java.lang.String getKBString(long)
-com.mwcorp.costs.st$2
+    49:49:public st()
+    351:351:public static boolean CurCheckRecord(com.mwcorp.costs.var$myCur)
+    605:605:public static int getDisplayWidth(android.content.Context)
+    609:609:public static int getDisplayHeight(android.content.Context)
+    613:613:public static float screenDensity(android.content.Context)
+    632:632:public static boolean isEven(float)
+    646:647:public static void help(int,android.content.Context)
+    651:663:public static void help(java.lang.String,android.content.Context)
+    666:685:public static java.lang.String getKBString(long)
+com.mwcorp.costs.st$3
 com.mwcorp.costs.st$UniObserver:
     java.lang.Object m_param1
-    61:65:public st$UniObserver(java.lang.Object,java.lang.Object)
-    71:71:public int Observ()
+    62:66:public st$UniObserver(java.lang.Object,java.lang.Object)
+    72:72:public int Observ()
 com.mwcorp.costs.th:
     public static final int ALERT_WINDOW_BACK
     public static final int ALERT_WINDOW_TEXT_LIST_BUTTON
