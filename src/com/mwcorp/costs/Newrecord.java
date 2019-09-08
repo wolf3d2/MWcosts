@@ -22,6 +22,7 @@ import android.content.ClipData;
 import android.content.res.Configuration;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.ClipboardManager;
 import android.text.Editable;
 import android.text.Spannable;
@@ -42,6 +43,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TableLayout;
@@ -95,6 +97,7 @@ public class Newrecord extends Activity {
 	int tb_btn_height = -1;
 	int tb_row = -1;
 	String selection = var.STR_NULL;
+	ProgressBar load_progress = null;
 	RelativeLayout toppanel;
 	RelativeLayout searchpanel;
 	TableLayout toolbar;
@@ -132,6 +135,7 @@ public class Newrecord extends Activity {
 		toppanel = null;
 		sv = null;
 		v = getLayoutInflater().inflate(R.layout.newrecord, null);
+        v.setBackgroundColor(th.getValue(th.NEWREC_EDITTEXT_BACK));
 		toppanel = (RelativeLayout) v.findViewById(R.id.newrec_toppanel);
 		toppanel.setBackgroundColor(th.getValue(th.NEWREC_TOOLBAR_BACK));
 		tv_changeg = (TextView) toppanel.findViewById(R.id.newrec_changed);
@@ -141,6 +145,10 @@ public class Newrecord extends Activity {
 		im_edit = (ImageView) v.findViewById(R.id.newrec_tb2_image_edit);
 		im_edit.setBackgroundResource(th.getValue(th.NEWREC_TOOLBAR_BACK_RES_ROUND_BUTTON));
 		im_edit.setVisibility(View.GONE);
+        load_progress = (ProgressBar) v.findViewById(R.id.newrec_load_progress);
+        load_progress.setBackgroundColor(th.getValue(th.NEWREC_EDITTEXT_BACK));
+		//load_progress.setTextColor(th.getValue(th.NEWREC_EDITTEXT_TEXT));
+        load_progress.setVisibility(View.GONE);
 		tv_suminbase = (TextView) v.findViewById(R.id.newrec_suminbase);
 		tv_suminbase.setTextColor(th.getValue(th.NEWREC_TOPPANEL_SUM_TEXT));
 		tv_suminbase.setTextSize(12);
@@ -162,8 +170,13 @@ public class Newrecord extends Activity {
 			@Override
 			public boolean onTouch(View view, MotionEvent event) {
 				int act = event.getAction();
-				if (act == MotionEvent.ACTION_MOVE) {
-					if (var.fl_view_mode && !fl_temp_edit) {
+				switch (act)
+				{
+				case MotionEvent.ACTION_DOWN:
+					if (var.fl_view_mode 
+							&& fl_temp_edit 
+							&& var.filename.length()>0
+							) {
 						startTimerToolbar2();
 						if (im_edit != null) {
 							if (im_edit.getVisibility() == View.VISIBLE)
@@ -171,6 +184,7 @@ public class Newrecord extends Activity {
 							im_edit.setVisibility(View.VISIBLE);
 						}
 					}
+					break;
 				}
 				return false;
 			}
@@ -200,9 +214,22 @@ public class Newrecord extends Activity {
 		// et.setMinimumHeight(sv.getMeasuredHeight());
 		// }
 		fl_editfile = false;
+		fl_changed = false;
+		// ******************
+		// если блок закоментить, то режим просмотра пашет правильно,
+		// но только со второго открытия файла!
+		fl_temp_edit = false;
+		if ((var.filename.length()>0)
+			&&var.file_desc.isEmpty()
+			&&var.fl_view_mode)
+		{
+				fl_temp_edit = true;
+		}
+		// ******************
 		if (var.filename.length() > 0) {
 			setEditable();
-			et.setText(getFileText(var.filename));
+			//et.setText(getFileText(var.filename));
+			loadTextInBackground(getFileText(var.filename));
 			fl_changed = false;
 			var.auto_calculate = false;
 			fl_editfile = true;
@@ -211,7 +238,8 @@ public class Newrecord extends Activity {
 			String set = "";
 			FolderInfo fi = rec.loadinifile(var.file_desc);
 			set = st.getFileString(fi.pathtxt);
-			et.setText(set);
+			//et.setText(set);
+			loadTextInBackground(set);
 
 		} else {
 			var.recordCur.clear();
@@ -240,11 +268,38 @@ public class Newrecord extends Activity {
 		fl_savedialog = false;
 		fl_select = false;
 		fl_changed = false;
-		;
+//		fl_temp_edit = false;
+//		if ((var.filename.length()>0)
+//			&&var.file_desc.isEmpty()
+//			&&var.fl_view_mode)
+//				fl_temp_edit = true;
+		startTimerToolbar2();
 		setChangegText();
 	}
 	// конец onCreate
 
+	/** записываем текст в et в фоне */
+	public void loadTextInBackground(final String txt)
+	{
+		if (txt.length() < 20000) {
+			et.setText(txt);
+			return;
+		}
+    	if (load_progress!=null)
+  			load_progress.setVisibility(View.VISIBLE);
+	    new Handler().postDelayed(new Runnable() {
+	    	public void run() {
+	    		et.setText(txt);
+	        	if (load_progress!=null) {
+	      			load_progress.setVisibility(View.GONE);
+	      			fl_changed = false;
+	      			setChangegText();
+	        	}
+	        }
+	    // если времени указать мало, то load_progress не крутится
+	    }, 1000);
+		
+	}
 	TextWatcher tw = new TextWatcher() {
 		@Override
 		public void afterTextChanged(Editable s) {
@@ -541,7 +596,6 @@ public class Newrecord extends Activity {
 				pos = pos + pos1;
 				arpos.add(pos);
 				if (pos <= ettxt.length()) {
-					int bbb = pos + txts.length();
 					subtxt = ettxt.substring(pos + txts.length());
 				} else {
 					break;
@@ -575,6 +629,8 @@ public class Newrecord extends Activity {
 			// .length(), totalString.length(), 0);
 
 			et.setText(text);
+			//setTextInBackground(getFileText(text.toString()));
+
 			et.requestFocus();
 			et.setSelection(arpos.get(0).intValue());
 			pos_search = 0;
@@ -689,14 +745,17 @@ public class Newrecord extends Activity {
 
 	// устанавливает режим readonly
 	public void setEditable() {
-		if (var.fl_view_mode && !var.filename.trim().isEmpty() && !fl_temp_edit) {
+		if (var.fl_view_mode 
+				&&!var.filename.trim().isEmpty()
+				&&var.file_desc.isEmpty()
+				&&fl_temp_edit) {
 			et.setTextIsSelectable(true);
 			et.setCursorVisible(false);
 			startTimerToolbar2();
 			im_edit.setVisibility(View.VISIBLE);
 		}
 	}
-
+	/** показывать или нет "звёздочку" */
 	public void setChangegText() {
 		if (tv_changeg == null)
 			return;
@@ -725,7 +784,7 @@ public class Newrecord extends Activity {
 			insertStr(out);
 			return;
 		case R.id.newrec_tb2_image_edit:
-			recreate();
+			//recreate();
 			fl_temp_edit = true;
 			setEditable();
 			fl_changed = false;
@@ -1273,11 +1332,11 @@ public class Newrecord extends Activity {
 		// else if (hd>3000) line = 80;
 		// ett.setMinLines(line);
 	}
-
+	/** устанавливаем  время показа кнпки включения редактирования*/
 	public void startTimerToolbar2() {
 		if (m_tm != null)
 			m_tm.cancel();
-		m_tm = new SameThreadTimer(5000, 0) {
+		m_tm = new SameThreadTimer(2000, 0) {
 			@Override
 			public void onTimer(SameThreadTimer timer) {
 				if (im_edit != null)

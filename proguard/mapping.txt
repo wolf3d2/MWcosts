@@ -6998,30 +6998,32 @@ com.mwcorp.costs.Newrecord -> com.mwcorp.costs.Newrecord:
     int tb_btn_height -> J
     int tb_row -> K
     java.lang.String selection -> L
-    android.widget.RelativeLayout toppanel -> M
-    android.widget.RelativeLayout searchpanel -> N
-    android.widget.TableLayout toolbar -> O
-    android.widget.RelativeLayout etpanel -> P
-    android.view.View v -> Q
-    android.widget.EditText et -> R
-    android.widget.EditText et_search -> S
-    android.widget.TextView tv_search -> T
-    android.widget.TextView tv_changeg -> U
-    android.widget.TextView tv_readonly -> V
-    android.widget.TextView tv_suminbase -> W
-    android.widget.ImageView im_edit -> X
-    com.mwcorp.tools.SameThreadTimer m_tm -> Y
-    boolean fl_editfile -> Z
-    boolean fl_changed -> aa
-    boolean fl_savedialog -> ab
-    boolean fl_changedofsearch -> ac
-    android.text.TextWatcher tw -> ad
-    android.view.View$OnKeyListener etsearch_onKeyListener -> ae
-    android.view.View$OnKeyListener et_onKeyListener -> af
-    android.view.View$OnClickListener action_clkListener -> ag
+    android.widget.ProgressBar load_progress -> M
+    android.widget.RelativeLayout toppanel -> N
+    android.widget.RelativeLayout searchpanel -> O
+    android.widget.TableLayout toolbar -> P
+    android.widget.RelativeLayout etpanel -> Q
+    android.view.View v -> R
+    android.widget.EditText et -> S
+    android.widget.EditText et_search -> T
+    android.widget.TextView tv_search -> U
+    android.widget.TextView tv_changeg -> V
+    android.widget.TextView tv_readonly -> W
+    android.widget.TextView tv_suminbase -> X
+    android.widget.ImageView im_edit -> Y
+    com.mwcorp.tools.SameThreadTimer m_tm -> Z
+    boolean fl_editfile -> aa
+    boolean fl_changed -> ab
+    boolean fl_savedialog -> ac
+    boolean fl_changedofsearch -> ad
+    android.text.TextWatcher tw -> ae
+    android.view.View$OnKeyListener etsearch_onKeyListener -> af
+    android.view.View$OnKeyListener et_onKeyListener -> ag
+    android.view.View$OnClickListener action_clkListener -> ah
     void <clinit>() -> <clinit>
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
+    void loadTextInBackground(java.lang.String) -> c
     void onDestroy() -> onDestroy
     void saved() -> f
     void saveEndExit() -> g
@@ -7046,7 +7048,7 @@ com.mwcorp.costs.Newrecord -> com.mwcorp.costs.Newrecord:
     java.lang.String getActionButtonStr(com.mwcorp.costs.var$ArrayToolbar) -> a
     void exitApp(boolean) -> b
     void runAction(int) -> a
-    java.lang.String getFileText(java.lang.String) -> c
+    java.lang.String getFileText(java.lang.String) -> d
     java.lang.String getSelection() -> n
     void copyText(java.lang.String) -> b
     void runCopyCommand() -> o
@@ -7061,7 +7063,7 @@ com.mwcorp.costs.Newrecord$1 -> com.mwcorp.costs.w:
 com.mwcorp.costs.Newrecord$10 -> com.mwcorp.costs.x:
     com.mwcorp.costs.Newrecord this$0 -> a
     void <init>(com.mwcorp.costs.Newrecord) -> <init>
-    int OnObserver$2838e5a0(java.lang.Object) -> a
+    void onFocusChange(android.view.View,boolean) -> onFocusChange
 com.mwcorp.costs.Newrecord$11 -> com.mwcorp.costs.y:
     com.mwcorp.costs.Newrecord this$0 -> a
     void <init>(com.mwcorp.costs.Newrecord) -> <init>
@@ -7069,39 +7071,44 @@ com.mwcorp.costs.Newrecord$11 -> com.mwcorp.costs.y:
 com.mwcorp.costs.Newrecord$12 -> com.mwcorp.costs.z:
     com.mwcorp.costs.Newrecord this$0 -> a
     void <init>(com.mwcorp.costs.Newrecord) -> <init>
+    int OnObserver$2838e5a0(java.lang.Object) -> a
+com.mwcorp.costs.Newrecord$13 -> com.mwcorp.costs.aa:
+    com.mwcorp.costs.Newrecord this$0 -> a
+    void <init>(com.mwcorp.costs.Newrecord) -> <init>
     void onTimer$72477d90() -> a
-com.mwcorp.costs.Newrecord$2 -> com.mwcorp.costs.aa:
+com.mwcorp.costs.Newrecord$2 -> com.mwcorp.costs.ab:
     com.mwcorp.costs.Newrecord this$0 -> a
     void <init>(com.mwcorp.costs.Newrecord) -> <init>
     boolean onKey(android.view.View,int,android.view.KeyEvent) -> onKey
-com.mwcorp.costs.Newrecord$3 -> com.mwcorp.costs.ab:
+com.mwcorp.costs.Newrecord$3 -> com.mwcorp.costs.ac:
     com.mwcorp.costs.Newrecord this$0 -> a
     void <init>(com.mwcorp.costs.Newrecord) -> <init>
     boolean onKey(android.view.View,int,android.view.KeyEvent) -> onKey
-com.mwcorp.costs.Newrecord$4 -> com.mwcorp.costs.ac:
+com.mwcorp.costs.Newrecord$4 -> com.mwcorp.costs.ad:
     com.mwcorp.costs.Newrecord this$0 -> a
     void <init>(com.mwcorp.costs.Newrecord) -> <init>
     void onClick(android.view.View) -> onClick
-com.mwcorp.costs.Newrecord$5 -> com.mwcorp.costs.ad:
+com.mwcorp.costs.Newrecord$5 -> com.mwcorp.costs.ae:
     com.mwcorp.costs.Newrecord this$0 -> a
     void <init>(com.mwcorp.costs.Newrecord) -> <init>
     boolean onTouch(android.view.View,android.view.MotionEvent) -> onTouch
-com.mwcorp.costs.Newrecord$6 -> com.mwcorp.costs.ae:
+com.mwcorp.costs.Newrecord$6 -> com.mwcorp.costs.af:
     com.mwcorp.costs.Newrecord this$0 -> a
     void <init>(com.mwcorp.costs.Newrecord) -> <init>
     void onFocusChange(android.view.View,boolean) -> onFocusChange
-com.mwcorp.costs.Newrecord$7 -> com.mwcorp.costs.af:
+com.mwcorp.costs.Newrecord$7 -> com.mwcorp.costs.ag:
+    com.mwcorp.costs.Newrecord this$0 -> a
+    java.lang.String val$txt -> b
+    void <init>(com.mwcorp.costs.Newrecord,java.lang.String) -> <init>
+    void run() -> run
+com.mwcorp.costs.Newrecord$8 -> com.mwcorp.costs.ah:
     com.mwcorp.costs.Newrecord this$0 -> a
     void <init>(com.mwcorp.costs.Newrecord) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.Newrecord$8 -> com.mwcorp.costs.ag:
+com.mwcorp.costs.Newrecord$9 -> com.mwcorp.costs.ai:
     com.mwcorp.costs.Newrecord this$0 -> a
     void <init>(com.mwcorp.costs.Newrecord) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.Newrecord$9 -> com.mwcorp.costs.ah:
-    com.mwcorp.costs.Newrecord this$0 -> a
-    void <init>(com.mwcorp.costs.Newrecord) -> <init>
-    void onFocusChange(android.view.View,boolean) -> onFocusChange
 com.mwcorp.costs.PrefActMain -> com.mwcorp.costs.PrefActMain:
     java.lang.String prefkey -> a
     com.mwcorp.costs.PrefActMain inst -> b
@@ -7120,11 +7127,11 @@ com.mwcorp.costs.PrefActMain -> com.mwcorp.costs.PrefActMain:
     void onBackPressed() -> onBackPressed
     void backup(android.content.Context,boolean) -> b
     int backupPref(android.content.Context,boolean) -> a
-com.mwcorp.costs.PrefActMain$1 -> com.mwcorp.costs.ai:
+com.mwcorp.costs.PrefActMain$1 -> com.mwcorp.costs.aj:
     com.mwcorp.costs.PrefActMain this$0 -> a
     void <init>(com.mwcorp.costs.PrefActMain) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.PrefActMain$2 -> com.mwcorp.costs.aj:
+com.mwcorp.costs.PrefActMain$2 -> com.mwcorp.costs.ak:
     android.content.Context val$cont -> a
     boolean val$bSave -> b
     void <init>(android.content.Context,boolean) -> <init>
@@ -7149,29 +7156,29 @@ com.mwcorp.costs.PrefActSetToolbar -> com.mwcorp.costs.PrefActSetToolbar:
     void onClick(android.view.View) -> onClick
     android.widget.Button createBtn$457e87c1(int,java.lang.String,boolean,int) -> a
     void llupdate() -> a
-com.mwcorp.costs.PrefActSetToolbar$1 -> com.mwcorp.costs.ak:
+com.mwcorp.costs.PrefActSetToolbar$1 -> com.mwcorp.costs.al:
     com.mwcorp.costs.PrefActSetToolbar this$0 -> a
     void <init>(com.mwcorp.costs.PrefActSetToolbar) -> <init>
     void afterTextChanged(android.text.Editable) -> afterTextChanged
     void beforeTextChanged(java.lang.CharSequence,int,int,int) -> beforeTextChanged
     void onTextChanged(java.lang.CharSequence,int,int,int) -> onTextChanged
-com.mwcorp.costs.PrefActSetToolbar$2 -> com.mwcorp.costs.al:
+com.mwcorp.costs.PrefActSetToolbar$2 -> com.mwcorp.costs.am:
     com.mwcorp.costs.PrefActSetToolbar this$0 -> a
     void <init>(com.mwcorp.costs.PrefActSetToolbar) -> <init>
     void onClick(android.view.View) -> onClick
-com.mwcorp.costs.PrefActSetToolbar$3 -> com.mwcorp.costs.am:
+com.mwcorp.costs.PrefActSetToolbar$3 -> com.mwcorp.costs.an:
     com.mwcorp.costs.PrefActSetToolbar this$0 -> a
     void <init>(com.mwcorp.costs.PrefActSetToolbar) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.PrefActSetToolbar$4 -> com.mwcorp.costs.an:
+com.mwcorp.costs.PrefActSetToolbar$4 -> com.mwcorp.costs.ao:
     com.mwcorp.costs.PrefActSetToolbar this$0 -> a
     void <init>(com.mwcorp.costs.PrefActSetToolbar) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.PrefActSetToolbar$5 -> com.mwcorp.costs.ao:
+com.mwcorp.costs.PrefActSetToolbar$5 -> com.mwcorp.costs.ap:
     com.mwcorp.costs.PrefActSetToolbar this$0 -> a
     void <init>(com.mwcorp.costs.PrefActSetToolbar) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.an -> com.mwcorp.costs.ap:
+com.mwcorp.costs.an -> com.mwcorp.costs.aq:
     java.util.ArrayList cur_rec -> a
     java.lang.String basecursymb -> b
     java.lang.String NOT_COUNTED -> c
@@ -7179,7 +7186,7 @@ com.mwcorp.costs.an -> com.mwcorp.costs.ap:
     void analizeText(java.lang.String) -> a
     void analizeParagrapf(java.lang.String) -> b
     void addCurrentCurrency(com.mwcorp.costs.var$RecordCurrency) -> a
-com.mwcorp.costs.rec -> com.mwcorp.costs.aq:
+com.mwcorp.costs.rec -> com.mwcorp.costs.ar:
     java.lang.String NAME -> a
     java.lang.String DATE_EDIT -> b
     java.lang.String PATH -> c
@@ -7208,7 +7215,7 @@ com.mwcorp.costs.rec -> com.mwcorp.costs.aq:
     java.lang.String getBackFolder() -> f
     void delini(java.lang.String) -> d
     boolean deleteDir(java.io.File) -> a
-com.mwcorp.costs.st -> com.mwcorp.costs.ar:
+com.mwcorp.costs.st -> com.mwcorp.costs.as:
     int KB -> a
     void <clinit>() -> <clinit>
     void sleep(int) -> a
@@ -7252,30 +7259,30 @@ com.mwcorp.costs.st -> com.mwcorp.costs.ar:
     boolean isDebugEmulator() -> j
     boolean requestPermission(android.app.Activity) -> b
     void exitApp() -> k
-com.mwcorp.costs.st$1 -> com.mwcorp.costs.as:
+com.mwcorp.costs.st$1 -> com.mwcorp.costs.at:
     java.lang.String val$ext -> a
     void <init>(java.lang.String) -> <init>
     boolean accept(java.io.File,java.lang.String) -> accept
-com.mwcorp.costs.st$2 -> com.mwcorp.costs.at:
+com.mwcorp.costs.st$2 -> com.mwcorp.costs.au:
     android.widget.EditText val$et -> a
     void <init>(android.widget.EditText) -> <init>
     void run() -> run
-com.mwcorp.costs.st$4 -> com.mwcorp.costs.au:
+com.mwcorp.costs.st$4 -> com.mwcorp.costs.av:
     android.app.Activity val$inst -> a
     void <init>(android.app.Activity) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.st$UniObserver -> com.mwcorp.costs.av:
+com.mwcorp.costs.st$UniObserver -> com.mwcorp.costs.aw:
     void <init>() -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
-com.mwcorp.costs.th -> com.mwcorp.costs.aw:
+com.mwcorp.costs.th -> com.mwcorp.costs.ax:
     java.util.ArrayList getSkinLight() -> a
     int getValue(int) -> a
     void setTheme(android.app.Activity) -> a
-com.mwcorp.costs.th$Theme -> com.mwcorp.costs.ax:
+com.mwcorp.costs.th$Theme -> com.mwcorp.costs.ay:
     int key -> a
     long val -> b
     void <init>(int,int) -> <init>
-com.mwcorp.costs.var -> com.mwcorp.costs.ay:
+com.mwcorp.costs.var -> com.mwcorp.costs.az:
     int skin_app -> b
     int size_text_listadapter -> c
     java.lang.String filename -> d
@@ -7301,11 +7308,11 @@ com.mwcorp.costs.var -> com.mwcorp.costs.ay:
     java.lang.String STR_lF -> x
     java.lang.String STR_ERROR -> y
     void <clinit>() -> <clinit>
-com.mwcorp.costs.var$ArrayToolbar -> com.mwcorp.costs.az:
+com.mwcorp.costs.var$ArrayToolbar -> com.mwcorp.costs.ba:
     int id -> a
     java.lang.String text -> b
     void <init>() -> <init>
-com.mwcorp.costs.var$FolderInfo -> com.mwcorp.costs.ba:
+com.mwcorp.costs.var$FolderInfo -> com.mwcorp.costs.bb:
     java.util.ArrayList cur -> a
     long dateedit -> b
     long date_calculate -> c
@@ -7316,12 +7323,12 @@ com.mwcorp.costs.var$FolderInfo -> com.mwcorp.costs.ba:
     int dir -> h
     boolean exist -> i
     void <init>() -> <init>
-com.mwcorp.costs.var$RecordCurrency -> com.mwcorp.costs.bb:
+com.mwcorp.costs.var$RecordCurrency -> com.mwcorp.costs.bc:
     java.lang.String symb -> a
     float value -> b
     long datecounted -> c
     void <init>() -> <init>
-com.mwcorp.costs.var$myCur -> com.mwcorp.costs.bc:
+com.mwcorp.costs.var$myCur -> com.mwcorp.costs.bd:
     int id -> a
     java.lang.String cur_symb -> b
     java.lang.String name -> c
@@ -7459,7 +7466,7 @@ com.mwcorp.tools.GlobDialog$8 -> com.mwcorp.tools.h:
     void <init>(com.mwcorp.tools.GlobDialog) -> <init>
     boolean onKey(android.view.View,int,android.view.KeyEvent) -> onKey
 com.mwcorp.tools.Mail -> com.mwcorp.tools.i:
-    java.lang.String MAIL -> a
+    java.lang.String EMAIL -> a
     void <clinit>() -> <clinit>
     void sendFeedback(android.content.Context) -> a
     void sendFeedback(android.content.Context,java.io.File) -> a

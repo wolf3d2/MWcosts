@@ -12,7 +12,7 @@ import android.os.Build;
 
 public class Mail 
 {
-	public static String MAIL = "wolf3d@tut.by";
+	public static String EMAIL = "mwsoft@tut.by";
 	public static void sendFeedback(Context c) {
 		sendFeedback(c, null);
 	}
@@ -38,7 +38,7 @@ public class Mail
 		final Intent emailIntent = new Intent(Intent.ACTION_SEND);
 		emailIntent.setType("text/message");
 		emailIntent.putExtra(Intent.EXTRA_EMAIL,
-				new String[] {MAIL});
+				new String[] {EMAIL});
 
 		String subj = null;
 		if(crash==null)

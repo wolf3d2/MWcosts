@@ -18,6 +18,7 @@ public class var
 	public static ArrayList<RecordCurrency> recordCur = new ArrayList<RecordCurrency>();
 	public static ArrayList<myCur> currency = new ArrayList<myCur>();
 	public static ArrayList<FolderInfo> folderinfo = new ArrayList<FolderInfo>();
+
 	/** режим просмотра */
 	public static boolean fl_view_mode = false;
 	public static int newrec_size_text = 16;
@@ -32,6 +33,7 @@ public class var
 	public static int tb_layout_type = 1;
 	public static int tb_line_port = 1;
 	public static int tb_line_land = 1;
+	/** не должен быть null! Только значение, или = "" */
 	public static String file_desc = "";
 	public static String create_inifile = "";
 	// константы
