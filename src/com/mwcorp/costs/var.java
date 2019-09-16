@@ -82,7 +82,7 @@ public class var
     		base_cur = false;
         }
     }
-	// подсчитанные значения валют для записи
+	/** подсчитанные значения валют для записи */
 	public static class RecordCurrency
     {
 		String symb = "";

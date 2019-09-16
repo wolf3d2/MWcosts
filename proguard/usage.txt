@@ -1487,7 +1487,7 @@ com.mwcorp.costs.an:
 com.mwcorp.costs.rec:
     static com.mwcorp.costs.rec inst
     38:42:public rec()
-    244:250:public static java.lang.String[] convertArrayListToArray(java.util.ArrayList)
+    242:248:public static java.lang.String[] convertArrayListToArray(java.util.ArrayList)
 com.mwcorp.costs.st:
     public static final boolean DEBUG
     public static final java.lang.String TAG

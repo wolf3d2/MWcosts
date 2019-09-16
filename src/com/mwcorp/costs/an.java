@@ -8,7 +8,7 @@ import com.mwcorp.costs.var.RecordCurrency;
 import com.mwcorp.costs.var.myCur;
 
 
-// анализ и подсчёт текста в записи
+/** анализ и подсчёт текста в записи */
 public class an 
 {
 	public static ArrayList<FolderInfo> cur_rec = new ArrayList<FolderInfo>();

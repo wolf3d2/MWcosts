@@ -80,7 +80,6 @@ public class rec
 			String sss = "";
 			sss = getRndNameEmpty(SUFINI);
 			var.create_inifile = sss;
-			String ggg = getCurrentFolder()+"/"+sss;
 			wr = new FileWriter(getCurrentFolder()+"/"+sss, false);
 			if (dir){
 				wr.write(DIR+"=1\n");
@@ -113,7 +112,6 @@ public class rec
 		fi = rec.loadinifile(inifile);
 		FileWriter wr;
 		try {
-			String ggg = getCurrentFolder()+"/"+inifile;
 			wr = new FileWriter(getCurrentFolder()+"/"+inifile, false);
 			wr.write(DIR+"="+fi.dir+"\n");
 			if (name.length() == 0)

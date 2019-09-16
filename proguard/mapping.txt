@@ -7014,12 +7014,13 @@ com.mwcorp.costs.Newrecord -> com.mwcorp.costs.Newrecord:
     com.mwcorp.tools.SameThreadTimer m_tm -> Z
     boolean fl_editfile -> aa
     boolean fl_changed -> ab
-    boolean fl_savedialog -> ac
-    boolean fl_changedofsearch -> ad
-    android.text.TextWatcher tw -> ae
-    android.view.View$OnKeyListener etsearch_onKeyListener -> af
-    android.view.View$OnKeyListener et_onKeyListener -> ag
-    android.view.View$OnClickListener action_clkListener -> ah
+    boolean fl_recalc -> ac
+    boolean fl_savedialog -> ad
+    boolean fl_changedofsearch -> ae
+    android.text.TextWatcher tw -> af
+    android.view.View$OnKeyListener etsearch_onKeyListener -> ag
+    android.view.View$OnKeyListener et_onKeyListener -> ah
+    android.view.View$OnClickListener action_clkListener -> ai
     void <clinit>() -> <clinit>
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate

@@ -115,6 +115,7 @@ public class Newrecord extends Activity {
 
 	boolean fl_editfile = false;
 	boolean fl_changed = false;
+	boolean fl_recalc = false;
 	boolean fl_savedialog = false;
 	boolean fl_changedofsearch = false;
 
@@ -215,6 +216,7 @@ public class Newrecord extends Activity {
 		// }
 		fl_editfile = false;
 		fl_changed = false;
+		fl_recalc = false;
 		// ******************
 		// если блок закоментить, то режим просмотра пашет правильно,
 		// но только со второго открытия файла!
@@ -443,6 +445,14 @@ public class Newrecord extends Activity {
 
 		// st.toast("сохранено");
 	}
+/** сохраняем только ini файл записи */
+	public boolean saveIni(String fname) {
+		if (fname.length() == 0) 
+			return false;
+		String frt = et.getText().toString();
+		rec.modifyParamFile(fname, frt);
+		return true;
+	}
 
 	public void savefile() {
 		if (var.filename.length() == 0)
@@ -474,6 +484,15 @@ public class Newrecord extends Activity {
 		if (searchpanel != null && searchpanel.getVisibility() == View.VISIBLE) {
 			hideSearchPanel();
 			return;
+		}
+		if (fl_recalc&&!fl_changed) {
+			if (var.filename.length() == 0) {
+				if (saveIni(var.file_desc)) {
+					finish();
+					MainActivity.inst.view();
+//					return;
+				}
+			} 
 		}
 		if (fl_changed) {
 			if (fl_savedialog)
@@ -567,7 +586,7 @@ public class Newrecord extends Activity {
 		}
 
 		an.analizeText(et.getText().toString());
-		fl_changed = true;
+		fl_recalc = true;
 		setChangegText();
 		// if (tv_changeg!=null)
 		// tv_changeg.setText("*");

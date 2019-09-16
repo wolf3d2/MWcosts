@@ -47,7 +47,7 @@ public class Pref
 		st.sleep(500);
 		removePreferences();
 		var.fl_view_mode = getBoolean(PR_VIEW_MODE, false);
-		var.auto_calculate = getBoolean(PR_AUTOCALC, false);
+		var.auto_calculate = getBoolean(PR_AUTOCALC, true);
 		var.fl_newrec_fullscreen = getBoolean(PR_NEWREC_FULLSCREEN, false);
 		var.fl_newrec_big_toolbar = getBoolean(Pref.PR_NEWREC_BIG_TOOLBAR, false);
 		var.fl_newrec_show_toolbar = getBoolean(PR_NEWREC_SHOW_TOOLBAR, true);
