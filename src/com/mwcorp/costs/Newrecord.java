@@ -80,10 +80,11 @@ public class Newrecord extends Activity {
 	final int ACTION_SHOW_KBD = 522;
 	final int ACTION_HIDE_KBD = 523;
 	final int ACTION_EXIT_APP = 524;
-
+	
 	public static String START_FILENAME_DESCRIPTOR = "URI_TEXT_FILE://" + st.STR_lF;
 	static Newrecord inst;
 
+	public String settext = st.STR_NULL;
 	boolean fl_exit_app = false;
 	boolean fl_select = false;
 	static boolean fl_temp_edit = true;
@@ -228,20 +229,25 @@ public class Newrecord extends Activity {
 				fl_temp_edit = true;
 		}
 		// ******************
+		settext = st.STR_NULL;
+		// открываем внешний файл
 		if (var.filename.length() > 0) {
 			setEditable();
-			//et.setText(getFileText(var.filename));
-			loadTextInBackground(getFileText(var.filename));
-			fl_changed = false;
-			var.auto_calculate = false;
-			fl_editfile = true;
+			settext = getFileText(var.filename);
+			if (var.newrec_open_size_text!=0&&settext.length() >= var.newrec_open_size_text*st.KB) {
+				openFileExternal();
+			} else {
+				setTextInBackground(settext);
+				fl_changed = false;
+				var.auto_calculate = false;
+				fl_editfile = true;
+			}
+		// открываем запись
 		} else if (var.file_desc.length() > 0) {
 			// this.setTitle(getString(R.string.edit_record));
-			String set = "";
 			FolderInfo fi = rec.loadinifile(var.file_desc);
-			set = st.getFileString(fi.pathtxt);
-			//et.setText(set);
-			loadTextInBackground(set);
+			settext = st.getFileString(fi.pathtxt);
+			setTextInBackground(settext);
 
 		} else {
 			var.recordCur.clear();
@@ -280,8 +286,72 @@ public class Newrecord extends Activity {
 	}
 	// конец onCreate
 
+	/** запрос на чтение внешнего файла, если он большого размера */
+	public void openFileExternal()
+	{
+		String[] ar = new String[3];
+		ar[0] = inst.getString(R.string.newrec_openfile_first)
+				+st.STR_SPACE+var.newrec_open_size_text
+				+"kb ("+inst.getString(R.string.only_view)+")";
+		ar[1] = inst.getString(R.string.newrec_openfile_first)
+				+st.STR_SPACE+(var.newrec_open_size_text*2)
+				+"kb ("+inst.getString(R.string.only_view)+")";
+		ar[2] = inst.getString(R.string.newrec_openfile_full);
+		
+		ArrayAdapter<String> adapt = new ArrayAdapter<String>(this, R.layout.dlg_list,
+				ar);
+
+		Dlg.CustomMenu(this, adapt, getString(R.string.newrec_openfile_title), 
+				new st.UniObserver() {
+			@Override
+			public int OnObserver(Object param1, Object param2) {
+				int size = settext.length();
+				switch (((Integer) param1).intValue()) 
+				{
+				case 0:
+					if (settext.length() >= st.newrec_open_size_text*st.KB)
+						size =  st.newrec_open_size_text*st.KB;
+					settext = settext.substring(0, size);
+					setTextInBackground(settext);
+					fl_temp_edit = false;
+					st.fl_view_mode = true;
+					hideSearchPanel();
+					viewTopPanel();
+					setContentView(v);
+					fl_savedialog = false;
+					fl_select = false;
+					fl_changed = false;
+					startTimerToolbar2();
+					setChangegText();
+					break;
+				case 1:
+					if (settext.length() >= st.newrec_open_size_text*st.KB*2)
+						size =  st.newrec_open_size_text*st.KB;
+					settext = settext.substring(0, size);
+					setTextInBackground(settext);
+					fl_temp_edit = false;
+					st.fl_view_mode = true;
+					hideSearchPanel();
+					viewTopPanel();
+					setContentView(v);
+					fl_savedialog = false;
+					fl_select = false;
+					fl_changed = false;
+					startTimerToolbar2();
+					setChangegText();
+					
+					break;
+				default:
+					setTextInBackground(settext);
+					break;
+				}
+				return 0;
+			}
+		});
+		
+	}
 	/** записываем текст в et в фоне */
-	public void loadTextInBackground(final String txt)
+	public void setTextInBackground(final String txt)
 	{
 		if (txt.length() < 20000) {
 			et.setText(txt);
@@ -455,6 +525,8 @@ public class Newrecord extends Activity {
 	}
 
 	public void savefile() {
+		if (var.fl_view_mode)
+			return;
 		if (var.filename.length() == 0)
 			return;
 		if (var.filename.startsWith(START_FILENAME_DESCRIPTOR)) {
@@ -495,6 +567,10 @@ public class Newrecord extends Activity {
 			} 
 		}
 		if (fl_changed) {
+			if (var.filename.length()>0&&var.fl_view_mode) {
+				exitApp(true);
+				return;
+			}
 			if (fl_savedialog)
 				return;
 			// if (GlobDialog.gbshow)

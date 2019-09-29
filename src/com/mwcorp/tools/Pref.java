@@ -14,6 +14,8 @@ public class Pref
 	private static String tmp = var.STR_NULL;
 	private static Pref INSTANCE;
 	SharedPreferences mPref;
+	/** ключ, какого размера читать файл по умолчанию */
+	public static String PR_READ_SIZE_TEXT_LEN = "read_size_text_length";
 	public static String PR_VIEW_MODE = "view_mode";
 // ключ, перечисление кнопок панели инструментов
 	public static String PR_TOOLBAR_BUTTON = "toolbar_button";
@@ -52,6 +54,8 @@ public class Pref
 		var.fl_newrec_big_toolbar = getBoolean(Pref.PR_NEWREC_BIG_TOOLBAR, false);
 		var.fl_newrec_show_toolbar = getBoolean(PR_NEWREC_SHOW_TOOLBAR, true);
 		var.fl_newrec_big_size_sum = getBoolean(PR_NEWREC_SUM_SIZE, false);
+		tmp = getString(Pref.PR_READ_SIZE_TEXT_LEN, st.STR_NULL+var.DEF_OPEN_SIZE_TEXT);
+		var.newrec_open_size_text = st.str2hex(tmp, 10);
 		tmp = getString(Pref.PR_NEWREC_EDIT_SIZE_TEXT, "16");
 		var.newrec_size_text = st.str2hex(tmp, 10);
 		tmp = getString(Pref.PR_TOOLBAR_BUTTON, Pref.PR_TOOLBAR_BUTTON_DEF);
@@ -107,6 +111,10 @@ public class Pref
 	public static final int getInt(String key,int fallback)
 	{
 		return get().getInt(key, fallback);
+	}
+	public static final long getLong(String key,int fallback)
+	{
+		return get().getLong(key, fallback);
 	}
 	public static final String getString(String key,String fallback)
 	{

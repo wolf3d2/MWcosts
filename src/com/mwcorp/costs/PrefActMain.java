@@ -38,6 +38,7 @@ public class PrefActMain extends PreferenceActivity implements OnSharedPreferenc
         pref.registerOnSharedPreferenceChangeListener(this);
         
         setValue(Pref.PR_NEWREC_EDIT_SIZE_TEXT, R.string.cat_newrec_size_text_desc, Pref.getString(Pref.PR_NEWREC_EDIT_SIZE_TEXT,"16"));
+        setValue(Pref.PR_READ_SIZE_TEXT_LEN, R.string.cat_newrec_size_big_file_desc, st.STR_NULL+Pref.getString(Pref.PR_READ_SIZE_TEXT_LEN,st.STR_NULL+var.DEF_OPEN_SIZE_TEXT));
         setSummary(Pref.PR_SKIN_APP, R.string.skin_name_desc, strVal(getResources().getStringArray(R.array.skin)[var.skin_app]));
 //        setSummary(prefkey, R.string.skin_name_desc, strVal(getResources().getStringArray(R.array.skin)[var.skin_app]));
     	Ads.show(this, 6);
@@ -63,6 +64,9 @@ public class PrefActMain extends PreferenceActivity implements OnSharedPreferenc
         
         if ("newrec_set_tb".equals(prefkey)){
         	st.runAct(PrefActSetToolbar.class, this);
+        }
+        else if ("default_setting".equals(prefkey)) {
+        	
         }
         else if ("default_setting".equals(prefkey)){
         	Dlg.yesNoDialog(inst, inst.getString(R.string.def_setting), new st.UniObserver() {
@@ -94,6 +98,10 @@ public class PrefActMain extends PreferenceActivity implements OnSharedPreferenc
         if(Pref.PR_NEWREC_EDIT_SIZE_TEXT.equals(prefkey))
         {
         	setValue(prefkey,R.string.cat_newrec_size_text_desc, "16");
+        }
+        else if(Pref.PR_READ_SIZE_TEXT_LEN.equals(prefkey))
+        {
+        	setValue(prefkey,R.string.cat_newrec_size_big_file_desc, st.STR_NULL+var.DEF_OPEN_SIZE_TEXT);
         }
         else if(Pref.PR_SKIN_APP.equals(prefkey))
         {

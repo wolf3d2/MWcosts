@@ -15,6 +15,14 @@
 		    android:inputType="number"
 	        />
 
+        <EditTextPreference
+	        android:defaultValue="50"
+	        android:key="read_size_text_length"
+	        android:title="@string/cat_newrec_size_big_file" 
+	        android:summary="@string/cat_newrec_size_big_file_desc" 
+		    android:inputType="number"
+	        />
+
         <CheckBoxPreference
            	android:defaultValue="false"
 	    	android:key="view_mode"

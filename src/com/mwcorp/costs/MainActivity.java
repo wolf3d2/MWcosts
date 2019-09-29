@@ -558,7 +558,6 @@ public class MainActivity extends Activity {
 					path = Uri.decode(data.getEncodedPath());
 				} else if (ContentResolver.SCHEME_CONTENT.equals(scheme)) {
 					ContentResolver cr = getContentResolver();
-					String fn = "";
 					InputStream fi = null;
 					int start = 0;
 					byte buf[] = null;

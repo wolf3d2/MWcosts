@@ -1464,7 +1464,7 @@ com.mwcorp.costs.MainActivity:
     public static final java.lang.String VERS
     public static final java.lang.String SLASH
     android.widget.TextView tvpath
-    986:986:public void kbdHide()
+    985:985:public void kbdHide()
 com.mwcorp.costs.R
 com.mwcorp.costs.R$array
 com.mwcorp.costs.R$attr
@@ -1556,8 +1556,9 @@ com.mwcorp.tools.GlobDialog:
 com.mwcorp.tools.Mail:
     13:13:public Mail()
 com.mwcorp.tools.Pref:
-    94:96:public static void setInt(java.lang.String,int)
-    99:101:public static void setString(java.lang.String,java.lang.String)
-    104:106:public static void setBoolean(java.lang.String,boolean)
+    98:100:public static void setInt(java.lang.String,int)
+    103:105:public static void setString(java.lang.String,java.lang.String)
+    108:110:public static void setBoolean(java.lang.String,boolean)
+    117:117:public static final long getLong(java.lang.String,int)
 com.mwcorp.tools.UtilText:
     6:6:public UtilText()

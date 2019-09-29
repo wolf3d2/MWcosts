@@ -32,14 +32,14 @@
     <string name="new_record">Запись</string>
     <string name="view_mode">Режим просмотра</string>
     <string name="view_mode_desc">Запрещает любые изменения в открытом внешнем файле. Не действует для текстов записей программы</string>
+    <string name="only_view">Только просмотр</string>
     <string name="edit_file">Редактирование файла</string>
     <string name="newrec_calculate_time">Посчитано</string>
     <string name="newrec_full">На полный экран</string>
     <string name="newrec_openfile_title">Открываемый файл слишком большой </string>
     <string name="newrec_openfile_title2">и его открытие может занять продолжительное время или привести к зависанию программы или всего устройства.\nЧто делаем?</string>
-    <string name="newrec_openfile_str0">Прочитать первые 50kb</string>
-    <string name="newrec_openfile_str1">Прочитать первые 100kb</string>
-    <string name="newrec_openfile_str2">Вс равно открыть</string>
+    <string name="newrec_openfile_first">Прочитать первые</string>
+    <string name="newrec_openfile_full">Открыть полностью</string>
     
 <!-- меню новой записи  -->
     <string name="menunrec_recalculate">Пересчитать</string>
@@ -125,6 +125,8 @@
     <string name="cat_newrec_desc">Параметры редактора</string>
     <string name="cat_newrec_size_text">Размер текста</string>
     <string name="cat_newrec_size_text_desc">Размер текста в редакторе\nПо умолчанию - 16</string>
+    <string name="cat_newrec_size_big_file">Какой размер открывать</string>
+    <string name="cat_newrec_size_big_file_desc">Какую часть файла открывать в килобайтах, если он большого размера.\n0 - открывать без запроса.</string>
     <string name="cat_newrec_size_sum">Увеличенный размер итоговых сумм</string>
     <string name="cat_newrec_size_sum_desc">Для больших экранов</string>
     

@@ -22,6 +22,12 @@ public class var
 	/** режим просмотра */
 	public static boolean fl_view_mode = false;
 	public static int newrec_size_text = 16;
+	/** какой размер файла открывать по умолчанию <br>
+	 *  Если 0, то полностью  */
+	public static int newrec_open_size_text = 0;
+	/** значение по умолчанию в килобайтах, открываемого файла без запроса  */
+	public static int DEF_OPEN_SIZE_TEXT = 50;
+	
 	public static boolean fl_newrec_fullscreen = false;
 	public static boolean auto_calculate = false;
 	public static boolean fl_newrec_show_toolbar = true;
