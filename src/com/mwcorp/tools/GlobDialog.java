@@ -211,7 +211,7 @@ public class GlobDialog  extends Activity
         et.setOnKeyListener(et_onKeyListener);
         et.setLayoutParams(lpet);
         et.setTextColor(th.getValue(th.ALERT_EDITTEXT));
-        st.showKbd(et);
+        st.showKbd(et,false);
         if (txt!=null&&txt.length()>0) {
         	et.setText(txt);
         	et.setSelection(et.getText().toString().length());

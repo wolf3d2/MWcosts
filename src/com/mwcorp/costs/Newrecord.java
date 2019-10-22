@@ -270,7 +270,7 @@ public class Newrecord extends Activity {
 		// tv_changeg.setText("");
 		if (var.auto_calculate)
 			recalc();
-		hideSearchPanel();
+		searchPanelHide();
 		viewTopPanel();
 		setContentView(v);
 		fl_savedialog = false;
@@ -315,7 +315,7 @@ public class Newrecord extends Activity {
 					setTextInBackground(settext);
 					fl_temp_edit = false;
 					st.fl_view_mode = true;
-					hideSearchPanel();
+					searchPanelHide();
 					viewTopPanel();
 					setContentView(v);
 					fl_savedialog = false;
@@ -331,7 +331,7 @@ public class Newrecord extends Activity {
 					setTextInBackground(settext);
 					fl_temp_edit = false;
 					st.fl_view_mode = true;
-					hideSearchPanel();
+					searchPanelHide();
 					viewTopPanel();
 					setContentView(v);
 					fl_savedialog = false;
@@ -461,19 +461,20 @@ public class Newrecord extends Activity {
 			runAction(this.ACTION_SEARCH);
 			return true;
 		case R.id.menunrec_help:
-			GlobDialog gd = new GlobDialog(inst);
-			gd.setGravityText(Gravity.LEFT | Gravity.TOP);
-			gd.set(R.string.menunrec_help_desc, R.string.ok, 0);
-			gd.setObserver(new st.UniObserver() {
-				@Override
-				public int OnObserver(Object param1, Object param2) {
-					if (((Integer) param1).intValue() == AlertDialog.BUTTON_POSITIVE) {
-						// finish();
-					}
-					return 0;
-				}
-			});
-			gd.showAlert();
+			st.help(R.string.menunrec_help_desc, inst);
+//			GlobDialog gd = new GlobDialog(inst);
+//			gd.setGravityText(Gravity.LEFT | Gravity.TOP);
+//			gd.set(R.string.menunrec_help_desc, R.string.ok, 0);
+//			gd.setObserver(new st.UniObserver() {
+//				@Override
+//				public int OnObserver(Object param1, Object param2) {
+//					if (((Integer) param1).intValue() == AlertDialog.BUTTON_POSITIVE) {
+//						// finish();
+//					}
+//					return 0;
+//				}
+//			});
+//			gd.showAlert();
 			return true;
 		}
 		return super.onOptionsItemSelected(item);
@@ -554,7 +555,7 @@ public class Newrecord extends Activity {
 		// }
 
 		if (searchpanel != null && searchpanel.getVisibility() == View.VISIBLE) {
-			hideSearchPanel();
+			searchPanelHide();
 			return;
 		}
 		if (fl_recalc&&!fl_changed) {
@@ -750,7 +751,7 @@ public class Newrecord extends Activity {
 		}
 	}
 
-	public void showSearchPanel() {
+	public void searchPanelShow() {
 		if (searchpanel == null)
 			return;
 		showToolbarPanel(false);
@@ -772,7 +773,7 @@ public class Newrecord extends Activity {
 				}
 			}
 		});
-		st.showKbd(et_search);
+		st.showKbd(et_search,true);
 		if (et_search.getText().toString().length() > 0) {
 			search();
 		}
@@ -821,7 +822,7 @@ public class Newrecord extends Activity {
 		}
 	};
 
-	public void hideSearchPanel() {
+	public void searchPanelHide() {
 		showToolbarPanel(true);
 		fl_changedofsearch = fl_changed;
 		int pos = et.getSelectionStart();
@@ -885,7 +886,7 @@ public class Newrecord extends Activity {
 			fl_changed = false;
 			return;
 		case R.id.newrec_search_close:
-			hideSearchPanel();
+			searchPanelHide();
 			return;
 		case R.id.newrec_search_down:
 			viewPosSearch(1);
@@ -1138,7 +1139,7 @@ public class Newrecord extends Activity {
 		case ACTION_SHOW_KBD:
 			if (!var.filename.isEmpty() && var.fl_view_mode)
 				break;
-			st.showKbd(et);
+			st.showKbd(et,false);
 			break;
 		case ACTION_HIDE_KBD:
 			st.hideKbd(inst);
@@ -1154,7 +1155,7 @@ public class Newrecord extends Activity {
 			et.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_MULTIPLE, KeyEvent.KEYCODE_MOVE_END));
 			break;
 		case ACTION_SEARCH:
-			showSearchPanel();
+			searchPanelShow();
 			break;
 		case ACTION_PGDN:
 			et.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_MULTIPLE, KeyEvent.KEYCODE_PAGE_DOWN));

@@ -556,7 +556,7 @@ public class st extends var
         }
         return null;
     }
-    public static void showKbd(final EditText et)
+    public static void showKbd(final EditText et, final boolean seltext)
     {
        (new Handler()).postDelayed(new Runnable() {
 
@@ -566,7 +566,11 @@ public class st extends var
                 et.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_DOWN , 0, 0, 0));
                 et.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), MotionEvent.ACTION_UP , 0, 0, 0));                       
                 if (et !=null)
-                	et.setSelection(et.getText().toString().length());
+                	if (seltext) {
+                		et.selectAll();
+                	} else {
+                		et.setSelection(et.getText().toString().length());
+                	}
             }
         }, 200);
     }
@@ -645,7 +649,7 @@ public class st extends var
     {
     	help(c.getString(id_txt), c);
     }
-    // показывает окно GlobDialog на экране с одной кнопкой Ок
+/** показывает окно GlobDialog на экране с одной кнопкой Ок */
     public static void help(String txt, Context c) 
     {
         GlobDialog gd = new GlobDialog(c);
