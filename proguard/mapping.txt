@@ -6984,44 +6984,45 @@ com.mwcorp.costs.Newrecord -> com.mwcorp.costs.Newrecord:
     int ACTION_SHOW_KBD -> v
     int ACTION_HIDE_KBD -> w
     int ACTION_EXIT_APP -> x
-    java.lang.String START_FILENAME_DESCRIPTOR -> y
-    com.mwcorp.costs.Newrecord inst -> z
-    java.lang.String settext -> A
-    boolean fl_exit_app -> B
-    boolean fl_select -> C
-    boolean fl_temp_edit -> D
-    int selStartPos -> E
-    int selEndPos -> F
-    android.widget.ScrollView sv -> G
-    android.widget.HorizontalScrollView hsv -> H
-    java.util.ArrayList arpos -> I
-    int pos_search -> J
-    int tb_btn_height -> K
-    int tb_row -> L
-    java.lang.String selection -> M
-    android.widget.ProgressBar load_progress -> N
-    android.widget.RelativeLayout toppanel -> O
-    android.widget.RelativeLayout searchpanel -> P
-    android.widget.TableLayout toolbar -> Q
-    android.widget.RelativeLayout etpanel -> R
-    android.view.View v -> S
-    android.widget.EditText et -> T
-    android.widget.EditText et_search -> U
-    android.widget.TextView tv_search -> V
-    android.widget.TextView tv_changeg -> W
-    android.widget.TextView tv_readonly -> X
-    android.widget.TextView tv_suminbase -> Y
-    android.widget.ImageView im_edit -> Z
-    com.mwcorp.tools.SameThreadTimer m_tm -> aa
-    boolean fl_editfile -> ab
-    boolean fl_changed -> ac
-    boolean fl_recalc -> ad
-    boolean fl_savedialog -> ae
-    boolean fl_changedofsearch -> af
-    android.text.TextWatcher tw -> ag
-    android.view.View$OnKeyListener etsearch_onKeyListener -> ah
-    android.view.View$OnKeyListener et_onKeyListener -> ai
-    android.view.View$OnClickListener action_clkListener -> aj
+    int MAX_SEARCH_COUNT -> y
+    java.lang.String START_FILENAME_DESCRIPTOR -> z
+    com.mwcorp.costs.Newrecord inst -> A
+    java.lang.String settext -> B
+    boolean fl_exit_app -> C
+    boolean fl_select -> D
+    boolean fl_temp_edit -> E
+    int selStartPos -> F
+    int selEndPos -> G
+    android.widget.ScrollView sv -> H
+    android.widget.HorizontalScrollView hsv -> I
+    java.util.ArrayList arpos -> J
+    int pos_search -> K
+    int tb_btn_height -> L
+    int tb_row -> M
+    java.lang.String selection -> N
+    android.widget.ProgressBar load_progress -> O
+    android.widget.RelativeLayout toppanel -> P
+    android.widget.RelativeLayout searchpanel -> Q
+    android.widget.TableLayout toolbar -> R
+    android.widget.RelativeLayout etpanel -> S
+    android.view.View v -> T
+    android.widget.EditText et -> U
+    android.widget.EditText et_search -> V
+    android.widget.TextView tv_search -> W
+    android.widget.TextView tv_changeg -> X
+    android.widget.TextView tv_readonly -> Y
+    android.widget.TextView tv_suminbase -> Z
+    android.widget.ImageView im_edit -> aa
+    com.mwcorp.tools.SameThreadTimer m_tm -> ab
+    boolean fl_editfile -> ac
+    boolean fl_changed -> ad
+    boolean fl_recalc -> ae
+    boolean fl_savedialog -> af
+    boolean fl_changedofsearch -> ag
+    android.text.TextWatcher tw -> ah
+    android.view.View$OnKeyListener etsearch_onKeyListener -> ai
+    android.view.View$OnKeyListener et_onKeyListener -> aj
+    android.view.View$OnClickListener action_clkListener -> ak
     void <clinit>() -> <clinit>
     void <init>() -> <init>
     void onCreate(android.os.Bundle) -> onCreate
@@ -7044,14 +7045,14 @@ com.mwcorp.costs.Newrecord -> com.mwcorp.costs.Newrecord:
     void setEditable() -> l
     void setChangegText() -> f
     void onClick(android.view.View) -> onClick
-    void viewPosSearch(int) -> b
+    void searchViewPos(int) -> b
     void createToolbar() -> m
     android.widget.Button createbtn(java.lang.String,int) -> a
     void runSetting() -> n
     java.lang.String getActionButtonStr(com.mwcorp.costs.var$ArrayToolbar) -> a
     void exitApp(boolean) -> b
     void runAction(int) -> a
-    java.lang.String getFileText(java.lang.String) -> d
+    java.lang.String getFileText(java.lang.String,long) -> a
     java.lang.String getSelection() -> o
     void copyText(java.lang.String) -> c
     void runCopyCommand() -> p
@@ -7101,7 +7102,8 @@ com.mwcorp.costs.Newrecord$6 -> com.mwcorp.costs.af:
     void onFocusChange(android.view.View,boolean) -> onFocusChange
 com.mwcorp.costs.Newrecord$7 -> com.mwcorp.costs.ag:
     com.mwcorp.costs.Newrecord this$0 -> a
-    void <init>(com.mwcorp.costs.Newrecord) -> <init>
+    java.io.File val$ff -> b
+    void <init>(com.mwcorp.costs.Newrecord,java.io.File) -> <init>
     int OnObserver$2838e5a0(java.lang.Object) -> a
 com.mwcorp.costs.Newrecord$8 -> com.mwcorp.costs.ah:
     com.mwcorp.costs.Newrecord this$0 -> a

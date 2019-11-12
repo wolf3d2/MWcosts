@@ -81,6 +81,8 @@ public class Newrecord extends Activity {
 	final int ACTION_HIDE_KBD = 523;
 	final int ACTION_EXIT_APP = 524;
 	
+	/** константа для обнуления (0/0) tv в панели поиска при получении этого значения */
+	public static int MAX_SEARCH_COUNT = -10000000;
 	public static String START_FILENAME_DESCRIPTOR = "URI_TEXT_FILE://" + st.STR_lF;
 	static Newrecord inst;
 
@@ -233,10 +235,15 @@ public class Newrecord extends Activity {
 		// открываем внешний файл
 		if (var.filename.length() > 0) {
 			setEditable();
-			settext = getFileText(var.filename);
-			if (var.newrec_open_size_text!=0&&settext.length() >= var.newrec_open_size_text*st.KB) {
-				openFileExternal();
+			File ff = new File(var.filename);
+			if (!ff.exists()|!ff.isFile()) {
+				st.toast(R.string.toast_not_open_file);
+				return;
+			}
+			if (var.newrec_open_size_text!=0&&ff.length() >= var.newrec_open_size_text*st.KB) {
+				openFileExternal(ff);
 			} else {
+				settext = getFileText(var.filename,0);
 				setTextInBackground(settext);
 				fl_changed = false;
 				var.auto_calculate = false;
@@ -287,7 +294,7 @@ public class Newrecord extends Activity {
 	// конец onCreate
 
 	/** запрос на чтение внешнего файла, если он большого размера */
-	public void openFileExternal()
+	public void openFileExternal(final File ff)
 	{
 		String[] ar = new String[3];
 		ar[0] = inst.getString(R.string.newrec_openfile_first)
@@ -305,13 +312,13 @@ public class Newrecord extends Activity {
 				new st.UniObserver() {
 			@Override
 			public int OnObserver(Object param1, Object param2) {
-				int size = settext.length();
+				int size = (int) ff.length();
 				switch (((Integer) param1).intValue()) 
 				{
 				case 0:
-					if (settext.length() >= st.newrec_open_size_text*st.KB)
+					if (size >= st.newrec_open_size_text*st.KB)
 						size =  st.newrec_open_size_text*st.KB;
-					settext = settext.substring(0, size);
+					settext = getFileText(ff.getAbsolutePath(),size);
 					setTextInBackground(settext);
 					fl_temp_edit = false;
 					st.fl_view_mode = true;
@@ -325,9 +332,9 @@ public class Newrecord extends Activity {
 					setChangegText();
 					break;
 				case 1:
-					if (settext.length() >= st.newrec_open_size_text*st.KB*2)
-						size =  st.newrec_open_size_text*st.KB;
-					settext = settext.substring(0, size);
+					if (size >= st.newrec_open_size_text*st.KB*2)
+						size =  st.newrec_open_size_text*st.KB*2;
+					settext = getFileText(ff.getAbsolutePath(),size);
 					setTextInBackground(settext);
 					fl_temp_edit = false;
 					st.fl_view_mode = true;
@@ -342,7 +349,9 @@ public class Newrecord extends Activity {
 					
 					break;
 				default:
-					setTextInBackground(settext);
+					settext = getFileText(ff.getAbsolutePath(),0);
+					if (settext!=null)
+						setTextInBackground(settext);
 					break;
 				}
 				return 0;
@@ -681,6 +690,7 @@ public class Newrecord extends Activity {
 		;
 		if (txts.length() == 0) {
 			et.setText(ettxt);
+			searchViewPos(MAX_SEARCH_COUNT);
 			return;
 		}
 		int pos = -1;
@@ -735,7 +745,7 @@ public class Newrecord extends Activity {
 			pos_search = -1;
 		}
 		et.setCursorVisible(true);
-		viewPosSearch(0);
+		searchViewPos(0);
 		if (!fl_changedofsearch)
 			fl_changed = false;
 	}
@@ -757,6 +767,7 @@ public class Newrecord extends Activity {
 		showToolbarPanel(false);
 		searchpanel.setVisibility(View.VISIBLE);
 		tv_search = (TextView) searchpanel.findViewById(R.id.newrec_search_result);
+		Button btn = (Button) searchpanel.findViewById(R.id.newrec_search_start);
 		et_search = (EditText) searchpanel.findViewById(R.id.newrec_search_edit);
 		et_search.setTextColor(Color.BLACK);
 		et_search.setOnKeyListener(etsearch_onKeyListener);
@@ -888,30 +899,43 @@ public class Newrecord extends Activity {
 		case R.id.newrec_search_close:
 			searchPanelHide();
 			return;
+		case R.id.newrec_search_start:
+			searchViewPos(0);
+			return;
 		case R.id.newrec_search_down:
-			viewPosSearch(1);
+			searchViewPos(1);
 			return;
 		case R.id.newrec_search_up:
-			viewPosSearch(-1);
+			searchViewPos(-1);
 			return;
 		}
 	}
 
-	public void viewPosSearch(int pos) {
+	public void searchViewPos(int pos) {
 		if (tv_search == null)
 			return;
 		if (arpos.size() == 0) {
 			tv_search.setText("[0/0]");
 			return;
 		}
-		if (pos == 0) {
+		if (pos == MAX_SEARCH_COUNT) {
+			tv_search.setText("[0/0]");
+			return;
+		}
+		else if (arpos.size() == 0) {
+			tv_search.setText("[0/0]");
+			return;
+		}
+		else if (pos == 0) {
 			pos_search = 0;
-		} else if (pos == 1) {
+		} 
+		else if (pos == 1) {
 			pos_search++;
 			if (pos_search >= arpos.size())
 				pos_search = 0;
 			// pos_search = arpos.size()-1;
-		} else if (pos == -1) {
+		} 
+		else if (pos == -1) {
 			pos_search--;
 			if (pos_search < 0)
 				pos_search = arpos.size() - 1;
@@ -1225,8 +1249,9 @@ public class Newrecord extends Activity {
 			break;
 		}
 	}
-
-	public String getFileText(String path) {
+	/** читаем текст из файла path, указанного размера size <br>
+	 * Если size == 0, то читаем полностью */
+	public String getFileText(String path, long size) {
 		if (path == null)
 			return var.STR_NULL;
 		if (path.startsWith(Newrecord.START_FILENAME_DESCRIPTOR))
@@ -1236,7 +1261,9 @@ public class Newrecord extends Activity {
 		try {
 			FileInputStream fi = new FileInputStream(f);
 			// st.toast(st.getKBString(f.length()));
-			byte buf[] = new byte[(int) f.length()];
+			if (size == 0)
+				size = f.length();
+			byte buf[] = new byte[(int) size];
 			fi.read(buf);
 			int start = 0;
 			if (buf.length > 3 && buf[0] == 0xef && buf[1] == 0xbb && buf[2] == 0xbf) {

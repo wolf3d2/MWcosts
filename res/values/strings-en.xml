@@ -50,7 +50,15 @@
     <string name="menunrec_auto_calculate">Auto calculate:</string>
     <string name="menunrec_save">Save</string>
     <string name="menunrec_help">Help</string>
-    <string name="menunrec_help_desc">Правила оформления новой записи:\n\nПодсчёт ведётся по абзацам.\nПеред цифрами в абзаце обязательно должен стоять хотя бы один символ, иначе считать будет неверно!\nЕсли абзац оканчивается числом, то считается что это базовая валюта.\nЕсли абзац оканчивается числом с указанием валюты (например 50USD), то к сумме базовой прибавляется указанная валюта в пересчёте по установленному курсу.\n\nЕсли первым символом в записи указать #, то эта запись не подсчитывается.\nЕсли последний символ абзаца #, то этот абзац не подсчитывается.\n\nЗАМЕЧАНИЕ!\nАвтоподсчёт на длинных записях сильно замедляет работу</string>
+	<string name="menunrec_help_desc">It is NECESSARY to save a new entry under a different name that does not match another one in this folder (different registers do not differ). Otherwise, it saves incorrectly!
+\n\nRules for making a new entry:\n\n- paragraphs are counted.
+\n- at least one character must be indicated before numbers in the paragraph, otherwise it will miscount!
+\n-if the paragraph ends with a number, then it is considered that this is the base currency.
+\n- if the paragraph ends with a number indicating the currency (for example, 50USD), then the specified currency will be added to the base amount in terms of the established exchange rate.
+\n- if you indicate the first character as #, then this entry will not be counted.
+\n- if the last character of the paragraph is #, then this paragraph will not be counted.
+\n\nNOTE!\nAutomatiс counting on long entries greatly slows down the work.
+\n\nTo start the search, press Enter (or Loop) on the keyboard</string>
     <string name="menunrec_search">Search</string>
     <string name="menunrec_close">Close not save</string>
     

@@ -144,7 +144,7 @@
     android:layout_marginTop="2dp"
     android:text="[0/0]"
     android:textColor="#fff"
-    android:textSize="8sp" 
+    android:textSize="12sp" 
     />
 
 <EditText
@@ -154,7 +154,7 @@
     android:layout_alignParentLeft="true"
     android:layout_below="@+id/newrec_search_result"
     android:layout_marginLeft="2dp"
-    android:layout_toLeftOf="@+id/newrec_search_up"
+    android:layout_toLeftOf="@+id/newrec_search_start"
     android:background="@drawable/edittext_back_focus_style"
     android:clickable="true"
     android:ems="10"
@@ -169,18 +169,33 @@
 </EditText>
     
 <Button
+    android:id="@+id/newrec_search_start"
+    android:layout_width="35dp"
+    android:layout_height="35dp"
+    android:layout_below="@+id/newrec_search_result"
+    android:layout_toLeftOf="@+id/newrec_search_up"
+    android:layout_marginLeft="2dp"
+    android:background="#aaa"
+    android:clickable="true"
+    android:onClick="onClick"
+    android:text="⇱"
+    android:textColor="#000"
+    android:textSize="20dp" 
+    />
+
+<Button
     android:id="@+id/newrec_search_up"
     android:layout_width="35dp"
     android:layout_height="35dp"
     android:layout_below="@+id/newrec_search_result"
     android:layout_toLeftOf="@+id/newrec_search_down"
-    android:layout_marginLeft="2dp"
+    android:layout_marginLeft="5dp"
     android:background="#aaa"
     android:clickable="true"
     android:onClick="onClick"
     android:text="⇧"
     android:textColor="#000"
-    android:textSize="16dp" 
+    android:textSize="20dp" 
     />
 
 <Button
@@ -195,7 +210,7 @@
     android:onClick="onClick"
     android:text="⇩"
     android:textColor="#000"
-    android:textSize="16dp" />
+    android:textSize="20dp" />
 
 <Button
     android:id="@+id/newrec_search_close"
@@ -203,7 +218,7 @@
     android:layout_height="35dp"
     android:layout_alignParentRight="true"
     android:layout_below="@+id/newrec_search_result"
-    android:layout_marginLeft="20dp"
+    android:layout_marginLeft="10dp"
     android:background="@drawable/delete"
     android:clickable="true"
     android:onClick="onClick" 
