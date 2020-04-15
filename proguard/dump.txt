@@ -13450,7 +13450,7 @@ Methods (count = 35):
     Access flags: 0x11
       = public final void d()
     Class member attributes (count = 1):
-    + Code attribute instructions (code length = 376, locals = 7, stack = 5):
+    + Code attribute instructions (code length = 392, locals = 7, stack = 5):
       [0] aload_0 v0
       [1] dup
       [2] getfield #208
@@ -13516,7 +13516,7 @@ Methods (count = 35):
       [91] istore v5
       [93] iconst_1
       [94] istore v6
-      [96] goto +83 (target=179)
+      [96] goto +88 (target=184)
       [99] aload_3 v3
       [100] aload_1 v1
       [101] invokevirtual #439
@@ -13524,7 +13524,7 @@ Methods (count = 35):
       [104] dup
       [105] istore v4
       [107] iconst_m1
-      [108] ificmpeq +68 (target=176)
+      [108] ificmpeq +73 (target=181)
       [111] iload v4
       [113] iload v5
       [115] iadd
@@ -13542,166 +13542,176 @@ Methods (count = 35):
       [133] aload_2 v2
       [134] invokevirtual #441
         + Methodref [java/lang/String.length ()I]
-      [137] ificmpgt +47 (target=184)
-      [140] aload_2 v2
-      [141] iload v4
-      [143] aload_1 v1
-      [144] invokevirtual #441
+      [137] ificmpgt +52 (target=189)
+      [140] aload_1 v1
+      [141] invokevirtual #441
         + Methodref [java/lang/String.length ()I]
-      [147] iadd
-      [148] invokevirtual #445
+      [144] pop
+      [145] aload_2 v2
+      [146] iload v4
+      [148] aload_1 v1
+      [149] invokevirtual #441
+        + Methodref [java/lang/String.length ()I]
+      [152] iadd
+      [153] invokevirtual #445
         + Methodref [java/lang/String.substring (I)Ljava/lang/String;]
-      [151] astore_3 v3
-      [152] iload v5
-      [154] ifne +10 (target=164)
-      [157] iload v4
-      [159] istore v5
-      [161] goto +18 (target=179)
-      [164] iload v4
-      [166] aload_1 v1
-      [167] invokevirtual #441
+      [156] astore_3 v3
+      [157] iload v5
+      [159] ifne +10 (target=169)
+      [162] iload v4
+      [164] istore v5
+      [166] goto +18 (target=184)
+      [169] iload v4
+      [171] aload_1 v1
+      [172] invokevirtual #441
         + Methodref [java/lang/String.length ()I]
-      [170] iadd
-      [171] istore v5
-      [173] goto +6 (target=179)
-      [176] iconst_0
-      [177] istore v6
-      [179] iload v6
-      [181] ifne -82 (target=99)
-      [184] aload_0 v0
-      [185] getfield #187
+      [175] iadd
+      [176] istore v5
+      [178] goto +6 (target=184)
+      [181] iconst_0
+      [182] istore v6
+      [184] iload v6
+      [186] ifne -87 (target=99)
+      [189] aload_0 v0
+      [190] getfield #187
         + Fieldref [com/mwcorp/costs/Newrecord.J Ljava/util/ArrayList;]
-      [188] invokevirtual #462
+      [193] invokevirtual #462
         + Methodref [java/util/ArrayList.size ()I]
-      [191] iconst_1
-      [192] ificmple +12 (target=204)
-      [195] aload_0 v0
-      [196] getfield #187
+      [196] iconst_1
+      [197] ificmple +12 (target=209)
+      [200] aload_0 v0
+      [201] getfield #187
         + Fieldref [com/mwcorp/costs/Newrecord.J Ljava/util/ArrayList;]
-      [199] iconst_1
-      [200] invokevirtual #461
+      [204] iconst_1
+      [205] invokevirtual #461
         + Methodref [java/util/ArrayList.remove (I)Ljava/lang/Object;]
-      [203] pop
-      [204] aload_0 v0
-      [205] getfield #187
+      [208] pop
+      [209] aload_0 v0
+      [210] getfield #187
         + Fieldref [com/mwcorp/costs/Newrecord.J Ljava/util/ArrayList;]
-      [208] invokevirtual #462
+      [213] invokevirtual #462
         + Methodref [java/util/ArrayList.size ()I]
-      [211] ifle +126 (target=337)
-      [214] new #111
+      [216] ifle +137 (target=353)
+      [219] new #111
         + Class [android/text/SpannableString]
-      [217] dup
-      [218] aload_2 v2
-      [219] invokespecial #284
+      [222] dup
+      [223] aload_0 v0
+      [224] getfield #198
+        + Fieldref [com/mwcorp/costs/Newrecord.U Landroid/widget/EditText;]
+      [227] invokevirtual #310
+        + Methodref [android/widget/EditText.getText ()Landroid/text/Editable;]
+      [230] invokeinterface #468, 256
+        + InterfaceMethodref [android/text/Editable.toString ()Ljava/lang/String;]
+      [235] invokespecial #284
         + Methodref [android/text/SpannableString.<init> (Ljava/lang/CharSequence;)V]
-      [222] astore_2 v2
-      [223] iconst_0
-      [224] istore_3 v3
-      [225] goto +56 (target=281)
-      [228] aload_2 v2
-      [229] new #112
+      [238] astore_2 v2
+      [239] iconst_0
+      [240] istore_3 v3
+      [241] goto +56 (target=297)
+      [244] aload_2 v2
+      [245] new #112
         + Class [android/text/style/BackgroundColorSpan]
-      [232] dup
-      [233] ldc #1
+      [248] dup
+      [249] ldc #1
         + Integer [-1996518400]
-      [235] invokespecial #285
+      [251] invokespecial #285
         + Methodref [android/text/style/BackgroundColorSpan.<init> (I)V]
-      [238] aload_0 v0
-      [239] getfield #187
+      [254] aload_0 v0
+      [255] getfield #187
         + Fieldref [com/mwcorp/costs/Newrecord.J Ljava/util/ArrayList;]
-      [242] iload_3 v3
-      [243] invokevirtual #459
+      [258] iload_3 v3
+      [259] invokevirtual #459
         + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
-      [246] checkcast #165
+      [262] checkcast #165
         + Class [java/lang/Integer]
-      [249] invokevirtual #433
+      [265] invokevirtual #433
         + Methodref [java/lang/Integer.intValue ()I]
-      [252] aload_0 v0
-      [253] getfield #187
+      [268] aload_0 v0
+      [269] getfield #187
         + Fieldref [com/mwcorp/costs/Newrecord.J Ljava/util/ArrayList;]
-      [256] iload_3 v3
-      [257] invokevirtual #459
+      [272] iload_3 v3
+      [273] invokevirtual #459
         + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
-      [260] checkcast #165
+      [276] checkcast #165
         + Class [java/lang/Integer]
-      [263] invokevirtual #433
+      [279] invokevirtual #433
         + Methodref [java/lang/Integer.intValue ()I]
-      [266] aload_1 v1
-      [267] invokevirtual #441
+      [282] aload_1 v1
+      [283] invokevirtual #441
         + Methodref [java/lang/String.length ()I]
-      [270] iadd
-      [271] bipush 33
-      [273] invokeinterface #469, 1280
+      [286] iadd
+      [287] bipush 33
+      [289] invokeinterface #469, 1280
         + InterfaceMethodref [android/text/Spannable.setSpan (Ljava/lang/Object;III)V]
-      [278] iinc v3, 1
-      [281] iload_3 v3
-      [282] aload_0 v0
-      [283] getfield #187
+      [294] iinc v3, 1
+      [297] iload_3 v3
+      [298] aload_0 v0
+      [299] getfield #187
         + Fieldref [com/mwcorp/costs/Newrecord.J Ljava/util/ArrayList;]
-      [286] invokevirtual #462
+      [302] invokevirtual #462
         + Methodref [java/util/ArrayList.size ()I]
-      [289] ificmplt -61 (target=228)
-      [292] aload_0 v0
-      [293] getfield #198
-        + Fieldref [com/mwcorp/costs/Newrecord.U Landroid/widget/EditText;]
-      [296] aload_2 v2
-      [297] invokevirtual #320
-        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
-      [300] aload_0 v0
-      [301] getfield #198
-        + Fieldref [com/mwcorp/costs/Newrecord.U Landroid/widget/EditText;]
-      [304] invokevirtual #312
-        + Methodref [android/widget/EditText.requestFocus ()Z]
-      [307] pop
+      [305] ificmplt -61 (target=244)
       [308] aload_0 v0
       [309] getfield #198
         + Fieldref [com/mwcorp/costs/Newrecord.U Landroid/widget/EditText;]
-      [312] aload_0 v0
-      [313] getfield #187
-        + Fieldref [com/mwcorp/costs/Newrecord.J Ljava/util/ArrayList;]
-      [316] iconst_0
-      [317] invokevirtual #459
-        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
-      [320] checkcast #165
-        + Class [java/lang/Integer]
-      [323] invokevirtual #433
-        + Methodref [java/lang/Integer.intValue ()I]
-      [326] invokevirtual #319
-        + Methodref [android/widget/EditText.setSelection (I)V]
-      [329] aload_0 v0
-      [330] iconst_0
-      [331] putfield #188
-        + Fieldref [com/mwcorp/costs/Newrecord.K I]
-      [334] goto +16 (target=350)
-      [337] aload_0 v0
-      [338] getfield #198
+      [312] aload_2 v2
+      [313] invokevirtual #320
+        + Methodref [android/widget/EditText.setText (Ljava/lang/CharSequence;)V]
+      [316] aload_0 v0
+      [317] getfield #198
         + Fieldref [com/mwcorp/costs/Newrecord.U Landroid/widget/EditText;]
-      [341] invokevirtual #312
+      [320] invokevirtual #312
         + Methodref [android/widget/EditText.requestFocus ()Z]
-      [344] pop
+      [323] pop
+      [324] aload_0 v0
+      [325] getfield #198
+        + Fieldref [com/mwcorp/costs/Newrecord.U Landroid/widget/EditText;]
+      [328] aload_0 v0
+      [329] getfield #187
+        + Fieldref [com/mwcorp/costs/Newrecord.J Ljava/util/ArrayList;]
+      [332] iconst_0
+      [333] invokevirtual #459
+        + Methodref [java/util/ArrayList.get (I)Ljava/lang/Object;]
+      [336] checkcast #165
+        + Class [java/lang/Integer]
+      [339] invokevirtual #433
+        + Methodref [java/lang/Integer.intValue ()I]
+      [342] invokevirtual #319
+        + Methodref [android/widget/EditText.setSelection (I)V]
       [345] aload_0 v0
-      [346] iconst_m1
+      [346] iconst_0
       [347] putfield #188
         + Fieldref [com/mwcorp/costs/Newrecord.K I]
-      [350] aload_0 v0
-      [351] getfield #198
+      [350] goto +16 (target=366)
+      [353] aload_0 v0
+      [354] getfield #198
         + Fieldref [com/mwcorp/costs/Newrecord.U Landroid/widget/EditText;]
-      [354] iconst_1
-      [355] invokevirtual #314
+      [357] invokevirtual #312
+        + Methodref [android/widget/EditText.requestFocus ()Z]
+      [360] pop
+      [361] aload_0 v0
+      [362] iconst_m1
+      [363] putfield #188
+        + Fieldref [com/mwcorp/costs/Newrecord.K I]
+      [366] aload_0 v0
+      [367] getfield #198
+        + Fieldref [com/mwcorp/costs/Newrecord.U Landroid/widget/EditText;]
+      [370] iconst_1
+      [371] invokevirtual #314
         + Methodref [android/widget/EditText.setCursorVisible (Z)V]
-      [358] aload_0 v0
-      [359] iconst_0
-      [360] invokespecial #358
+      [374] aload_0 v0
+      [375] iconst_0
+      [376] invokespecial #358
         + Methodref [com/mwcorp/costs/Newrecord.b (I)V]
-      [363] aload_0 v0
-      [364] getfield #211
+      [379] aload_0 v0
+      [380] getfield #211
         + Fieldref [com/mwcorp/costs/Newrecord.ag Z]
-      [367] ifne +8 (target=375)
-      [370] aload_0 v0
-      [371] iconst_0
-      [372] putfield #208
+      [383] ifne +8 (target=391)
+      [386] aload_0 v0
+      [387] iconst_0
+      [388] putfield #208
         + Fieldref [com/mwcorp/costs/Newrecord.ad Z]
-      [375] return
+      [391] return
       Code attribute exceptions (count = 0):
       Code attribute attributes (attribute count = 0):
   + Method:       a(Z)V

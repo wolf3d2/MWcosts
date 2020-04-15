@@ -683,12 +683,12 @@ public class Newrecord extends Activity {
 		fl_changedofsearch = fl_changed;
 		if (et.isSelected())
 			st.toast("selected");
-		String txts = et_search.getText().toString().toLowerCase().trim();
+		String stxts = et_search.getText().toString().toLowerCase().trim();
 		String ettxt = et.getText().toString().toLowerCase();
 		String subtxt = ettxt;
 		arpos.clear();
-		;
-		if (txts.length() == 0) {
+		
+		if (stxts.length() == 0) {
 			et.setText(ettxt);
 			searchViewPos(MAX_SEARCH_COUNT);
 			return;
@@ -697,19 +697,20 @@ public class Newrecord extends Activity {
 		int pos1 = 0;
 		boolean fl = true;
 		while (fl) {
-			pos = subtxt.indexOf(txts);
+			pos = subtxt.indexOf(stxts);
 			if (pos != -1) {
 				pos = pos + pos1;
 				arpos.add(pos);
 				if (pos <= ettxt.length()) {
-					subtxt = ettxt.substring(pos + txts.length());
+					int iii = pos + stxts.length();
+					subtxt = ettxt.substring(pos + stxts.length());
 				} else {
 					break;
 				}
 				if (pos1 == 0)
 					pos1 = pos;
 				else
-					pos1 = pos + txts.length();
+					pos1 = pos + stxts.length();
 				continue;
 			}
 			fl = false;
@@ -719,9 +720,11 @@ public class Newrecord extends Activity {
 			arpos.remove(1);
 		}
 		if (arpos.size() > 0) {
-			Spannable text = new SpannableString(ettxt);
+			Spannable text = new SpannableString(et.getText().toString());
 			for (int i = 0; i < arpos.size(); i++) {
-				text.setSpan(new BackgroundColorSpan(0x88ff8c00), arpos.get(i), arpos.get(i) + txts.length(),
+				text.setSpan(new BackgroundColorSpan(0x88ff8c00), 
+						arpos.get(i), 
+						arpos.get(i) + stxts.length(),
 						Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 			}
 			// подчёркивание
