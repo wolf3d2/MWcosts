@@ -17,6 +17,7 @@ public class Pref
 	/** ключ, какого размера читать файл по умолчанию */
 	public static String PR_READ_SIZE_TEXT_LEN = "read_size_text_length";
 	public static String PR_VIEW_MODE = "view_mode";
+	public static String PR_FIRST_START = "first_start";
 // ключ, перечисление кнопок панели инструментов
 	public static String PR_TOOLBAR_BUTTON = "toolbar_button";
 	public static String PR_TOOLBAR_LINE_COUNT_PORT = "toolbar_linecnt_port";

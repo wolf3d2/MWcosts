@@ -9,7 +9,7 @@ com.google.android.gms.R$string
 com.google.android.gms.R$style
 com.google.android.gms.R$styleable
 com.mwcorp.costs.About:
-    66:68:public void onClick1(android.view.View)
+    67:69:public void onClick1(android.view.View)
 com.mwcorp.costs.Ads:
     19:19:Ads()
     33:33:public static void destroy()
@@ -20,7 +20,7 @@ com.mwcorp.costs.MainActivity:
     public static final java.lang.String VERS
     public static final java.lang.String SLASH
     android.widget.TextView tvpath
-    985:985:public void kbdHide()
+    1002:1002:public void kbdHide()
 com.mwcorp.costs.R
 com.mwcorp.costs.R$array
 com.mwcorp.costs.R$attr
@@ -53,7 +53,10 @@ com.mwcorp.costs.st:
     613:613:public static int getDisplayHeight(android.content.Context)
     617:617:public static float screenDensity(android.content.Context)
     636:636:public static boolean isEven(float)
+    650:651:public static void help(int,android.content.Context)
+    655:667:public static void help(java.lang.String,android.content.Context)
     670:689:public static java.lang.String getKBString(long)
+com.mwcorp.costs.st$3
 com.mwcorp.costs.st$UniObserver:
     java.lang.Object m_param1
     62:66:public st$UniObserver(java.lang.Object,java.lang.Object)
@@ -101,13 +104,14 @@ com.mwcorp.perm.Perm:
     20:20:public Perm()
 com.mwcorp.tools.GlobDialog:
     public static final int NO_FINISH
+    494:495:public void setGravityText(int)
     648:650:public void setListArray(int,int,int,int,java.util.ArrayList)
+    664:665:public void set(java.lang.String,int,int)
 com.mwcorp.tools.Mail:
     13:13:public Mail()
 com.mwcorp.tools.Pref:
-    98:100:public static void setInt(java.lang.String,int)
-    103:105:public static void setString(java.lang.String,java.lang.String)
-    108:110:public static void setBoolean(java.lang.String,boolean)
-    117:117:public static final long getLong(java.lang.String,int)
+    99:101:public static void setInt(java.lang.String,int)
+    104:106:public static void setString(java.lang.String,java.lang.String)
+    118:118:public static final long getLong(java.lang.String,int)
 com.mwcorp.tools.UtilText:
     6:6:public UtilText()

@@ -16,6 +16,12 @@
         android:title="@string/rate_menu"
         />
    <item
+        android:id="@+id/action_welcome"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/welcome"
+        />
+   <item
         android:id="@+id/action_other_app"
         android:orderInCategory="100"
         android:showAsAction="never"

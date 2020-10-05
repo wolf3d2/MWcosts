@@ -19,6 +19,7 @@ import com.mwcorp.dialog.Dlg;
 import com.mwcorp.perm.Perm;
 import com.mwcorp.tools.GlobDialog;
 import com.mwcorp.tools.Mail;
+import com.mwcorp.tools.Pref;
 
 import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
@@ -264,10 +265,23 @@ public class MainActivity extends Activity {
 		rlv = (ListView) findViewById(R.id.main_listView);
 
 		view();
+		firstStart();
 		// показ рекламы
 		Ads.count_failed_load = 0;
 		Ads.show(this, 2);
 	}
+
+	/**  первый запуск приложения */
+	public void firstStart() {
+		if (Pref.getBoolean(Pref.PR_FIRST_START, true)) {
+			dialogWelcome();
+			Pref.setBoolean(Pref.PR_FIRST_START, false);
+		}
+	}
+	public void dialogWelcome() {
+		Dlg.helpDialog(inst, inst.getString(R.string.welcome_desc));
+	}
+
 
 	@Override
 	public void onPause() {
@@ -299,6 +313,9 @@ public class MainActivity extends Activity {
 		switch (item.getItemId()) {
 		case R.id.action_about:
 			st.runAct(About.class, inst);
+			return true;
+		case R.id.action_welcome:
+			dialogWelcome();
 			return true;
 		case R.id.action_rate_app:
 			rateGooglePlay();

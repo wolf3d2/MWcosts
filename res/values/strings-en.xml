@@ -31,7 +31,20 @@
 	
 <!-- главное меню  -->
     <string name="mm_about">About</string>
-
+    <string name="welcome">Welcome</string>
+	<string name="welcome_desc">Initial information 
+\n(This text is available in the \"Welcome\" menu item)
+\n\nThis program is designed for the automatic (or semi-automatic) calculation of lists entered as a regular text and in a certain format, taking into account both the main currency and many others you like. 
+\n\nTo start counting lists in other currencies, go to the currencies, edit (or add) the currency you want to count by ticking the \"Main currency\" line.
+Then indicate the exchange rates relative to the main one. 
+\n\nAfter the currencies are set, to add an entry, click the \"Add \" button on the program launch screen and enter your list. 
+\nAbout how to enter a list, you can read in the \"Help\" menu item (three dots). 
+\n\nIf you select in the same menu the \"AutoСount\" item,  your list will be automatically calculated as long as a new data is entered.
+\n\nIn addition to list counting, this program can be used as a notebook, and the entries can be arranged in different folders.
+\n\nAnd it can also be used as a text editor for large files.
+\nIn the file view mode, it will change the text, but not save it.
+\n\nThis program can also be used to view any files of any size, whether it 
+be text, media, binary, etc.</string>    
 <!-- новая запись  -->
     <string name="new_record">Record</string>
     <string name="view_mode">View mode</string>

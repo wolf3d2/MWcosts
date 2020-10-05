@@ -470,7 +470,9 @@ public class Newrecord extends Activity {
 			runAction(this.ACTION_SEARCH);
 			return true;
 		case R.id.menunrec_help:
-			st.help(R.string.menunrec_help_desc, inst);
+			Dlg.helpDialog(inst, inst.getString(R.string.menunrec_help_desc));
+			//st.help(R.string.menunrec_help_desc, inst);
+			
 //			GlobDialog gd = new GlobDialog(inst);
 //			gd.setGravityText(Gravity.LEFT | Gravity.TOP);
 //			gd.set(R.string.menunrec_help_desc, R.string.ok, 0);

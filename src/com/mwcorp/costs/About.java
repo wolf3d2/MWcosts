@@ -17,8 +17,9 @@ public class About extends Activity
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
 		inst = this;
+		th.setTheme(inst);
+		super.onCreate(savedInstanceState);
         View v = getLayoutInflater().inflate(R.layout.about, null);
 		RelativeLayout rl = (RelativeLayout)v.findViewById(R.id.rl_about);
 		rl.setBackgroundColor(th.getValue(th.ABOUT_BACK));
